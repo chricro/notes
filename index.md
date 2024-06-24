@@ -47,5 +47,5 @@ title: Contents
 
 ## Generative AI
 
-1. [Useful resources](ai/resources): Benchmarks and leaderboards, interesting blogs and github resources.
-2. [An overview of large language models](ai/llm): Pretraining, instruction fine-tuning, alignment techniques. Frameworks to deploy LLMs efficiently, optimization of inference. How to improve reasoning. Vision transformers.
+1. [Useful resources](ai/resources/): Benchmarks and leaderboards, interesting blogs and github resources.
+2. [An overview of large language models](ai/llm/): Pretraining, instruction fine-tuning, alignment techniques. Frameworks to deploy LLMs efficiently, optimization of inference. How to improve reasoning. Vision transformers.
