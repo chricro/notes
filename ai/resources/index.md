@@ -3,22 +3,29 @@ layout: post
 title: Generative AI resources
 ---
 
-* [Tokenizer playground](https://huggingface.co/spaces/Xenova/the-tokenizer-playground)
-* [Comparison of providers](https://artificialanalysis.ai/models/llama-3-instruct-70b/providers)
+## OpenAI tokenizer:
 
-# LLM leaderboards:
+OpenAI's large language models (sometimes referred to as GPT's) process text using tokens, which are common sequences of characters found in a set of text. The models learn to understand the statistical relationships between these tokens, and excel at producing the next token in a sequence of tokens.
 
-* [OpenLLM](https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard)
+You can use this [tool](https://huggingface.co/spaces/Xenova/the-tokenizer-playground) to understand how a piece of text might be tokenized by a language model, and the total count of tokens in that piece of text.
+
+## Comparison of models and providers:
+
+The following [website](https://artificialanalysis.ai/models) provides a nice comparison and analysis of AI models across key performance metrics including quality, price, output speed, latency, context window.
+
+## LLM leaderboards:
+
+In this section, you will find some popular LLM leaderboards:
 * [LMSYS Chatbot Arena](https://huggingface.co/spaces/lmsys/chatbot-arena-leaderboard)
-* [LLM Rubric Leaderboard](https://tide-freckle-52b.notion.site/1e0168e3481747ebaa365f77a3af3cc1?v=83e3d58d1c3c45ad879834981b8c2530)
+* [OpenLLM](https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard)
 
-# List of papers to filter:
+## List of papers to filter:
 
-* Efficient LLM papers on [github](https://github.com/tiingweii-shii/Awesome-Resource-Efficient-LLM-Papers?tab=readme-ov-file)
-* LLM papers on [github](https://github.com/Hannibal046/Awesome-LLM?tab=readme-ov-file)
-* Prompt engineering [guide](https://www.promptingguide.ai/research/rag#rag-research-insights) on RAG
+* This [github](https://github.com/tiingweii-shii/Awesome-Resource-Efficient-LLM-Papers?tab=readme-ov-file) repository classifies a lot of LLM papers covering different aspects of transformers.
+* Similarly, this [github](https://github.com/Hannibal046/Awesome-LLM?tab=readme-ov-file) repository collects popular LLM papers written by the GAFAM; but also a great deal of resources on LLM deployment.
+* This Prompt engineering [section](https://www.promptingguide.ai/research) highlights miscellaneous and interesting research findings about how to better work with LLMs. It include new tips, insights and developments around important LLM research areas such as scaling, agents, efficiency, hallucination, architectures, prompt injection.
 
-# Courses:
+## Courses:
 
 * Maxime Labonne's [course](https://github.com/mlabonne/llm-course?tab=readme-ov-file)
 * The novice LLM [training guide](https://rentry.org/llm-training)
@@ -28,7 +35,7 @@ title: Generative AI resources
 * [General content](https://jalammar.github.io/) about AI
 * Microsoft Gen AI [for beginners](https://microsoft.github.io/generative-ai-for-beginners/#/13-continued-learning/README?wt.mc_id=academic-105485-koreyst&id=lesson-6-building-text-generation-applications)
 
-# Interesting blogs:
+## Interesting blogs:
 
 * [kipp.ly](https://kipp.ly/transformer-inference-arithmetic/) inference performance guide
 * [blog euleuther](https://blog.eleuther.ai/transformer-math/) training guide
@@ -40,7 +47,7 @@ title: Generative AI resources
 Memory = 1.2 * Number of parameters * (precision / 8 bits)
 For instance, Llama-3-70B in bfloat16 -> Memory required ~ 1.2 * 70B * 16/8 = 168GB ~ 2xA100 (80GB)
 
-# Good ressources for GPU programming:
+## Good ressources for GPU programming:
 
 * nvidia cuda [training series](https://www.olcf.ornl.gov/cuda-training-series/)
 * nvidia [blog](https://developer.nvidia.com/blog/even-easier-introduction-cuda/) introducing cuda
