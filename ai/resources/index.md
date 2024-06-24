@@ -9,6 +9,10 @@ OpenAI's large language models (sometimes referred to as GPT's) process text usi
 
 You can use this [tool](https://huggingface.co/spaces/Xenova/the-tokenizer-playground) to understand how a piece of text might be tokenized by a language model, and the total count of tokens in that piece of text.
 
+## arxiv-sanity:
+
+Arxiv-sanity, developed and maintained by Andrej Karpathy, is a helpful tool for discovering arXiv papers that best match your keywords. You can use it simply by clicking on this [link](https://arxiv-sanity-lite.com/).
+
 ## Comparison of models and providers:
 
 The following [website](https://artificialanalysis.ai/models) provides a nice comparison and analysis of AI models across key performance metrics including quality, price, output speed, latency, context window.
@@ -55,7 +59,7 @@ For instance, Llama-3-70B in bfloat16 -> Memory required ~ 1.2 * 70B * 16/8 = 16
 * Heterogenous Parallel Programming on [youtube](https://www.youtube.com/playlist?list=PLzn6LN6WhlN06hIOA_ge6SrgdeSiuf9Tb)
 * lecture on applied gpu programming on [youtube](https://www.youtube.com/playlist?list=PLPJwWVtf19Wgx_bupSDDSStSv-tOGGWRO)
 
-# Papers (tool for researching papers: [arxiv-sanity](https://arxiv-sanity-lite.com/)  )
+
 
 * https://github.com/hollobit/GenAI_LLM_timeline
 * https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models/tree/Evaluation#evaluation-leaderboards
