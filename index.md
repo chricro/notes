@@ -49,3 +49,7 @@ title: Contents
 
 1. [Useful resources](ai/resources/): Benchmarks and leaderboards, interesting blogs and github resources.
 2. [An overview of large language models](ai/llm/): Pretraining, instruction fine-tuning, alignment techniques. Frameworks to deploy LLMs efficiently, optimization of inference. How to improve reasoning. Vision transformers.
+
+## Finance
+
+1. [Book Excerpts](finance/books/): Sentences from books that I find interesting and educational.
