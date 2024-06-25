@@ -58,9 +58,9 @@ Let $$(U_*, W_*) \in \mathbb{R}^{d \times p} \times \mathbb{R}^{p \times d}$$ be
 
 For all $$U \in \mathbb{R}^{d \times p}$$ such that $$U^TU = I_p$$, we have:
 
-$$\Sigma_{i=1}^n ||X_i - UU^TX_i||^2 = \Sigma_{i=1}^n ||X_i||^2 - \mathop{\text{trace}}(U^TXX^TU)$$.
+$$\sum_{i=1}^n \|X_i - UU^T X_i\|^2 = \sum_{i=1}^n \|X_i\|^2 - \operatorname{trace}(U^T X X^T U)$$.
 
-Therefore, solving the PCA problem boils down to computing $$U_{\star} \in \underset{U \in \mathbb{R}^{d \times p}, U^T U=I_p}{\mathop{\text{argmax}}}{\mathop{\text{trace}}\left(U^T \Sigma_n U\right)}$$.
+Therefore, solving the PCA problem boils down to computing $$U_{\star} \in \underset{U \in \mathbb{R}^{d \times p}, U^T U = I_p}{\operatorname{argmax}} \operatorname{trace}\left(U^T \Sigma_n U\right)$$.
 
 Let $$v_1, ..., v_d$$ be orthonormal eigenvectors associated with the eigenvalues $$\lambda_i \geq ... \geq \lambda_d$$ of $$\Sigma_n$$. Then a solution to the PCA problem is given by the matrix $$U_*$$ with columns $$v_1, ..., v_p$$ and $$W_* = U_*^T$$
 
