@@ -58,7 +58,7 @@ Let $$(U_*, W_*) \in \mathbb{R}^{d \times p} \times \mathbb{R}^{p \times d}$$ be
 
 For all $$U \in \mathbb{R}^{d \times p}$$ such that $$U^TU = I_p$$, we have:
 
-$$\Sigma_{i=1}^n ||X_i - UU^TX_i||^2 = \Sigma_{i=1}^n ||X_i||^2 - \mathop{text{trace}}(U^TXX^TU)$$.
+$$\Sigma_{i=1}^n ||X_i - UU^TX_i||^2 = \Sigma_{i=1}^n ||X_i||^2 - \mathop{\text{trace}}(U^TXX^TU)$$.
 
 Therefore, solving the PCA problem boils down to computing $$U_{\star} \in \underset{U \in \mathbb{R}^{d \times p}, U^T U=I_p}{\mathop{\text{argmax}}}{\mathop{\text{trace}}\left(U^T \Sigma_n U\right)}$$.
 
