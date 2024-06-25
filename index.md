@@ -8,6 +8,9 @@ title: Contents
 
 ## Machine Learning
 
+[Unsupervised learning](machine_learning/unsupervised_learning): Principal Component Analysis (PCA), Kernel PCA
+
+
 1. [Introduction](preliminaries/introduction/): What is probabilistic graphical modeling? Overview of the course.
 
 2. [Review of probability theory](preliminaries/probabilityreview): Probability distributions. Conditional probability. Random variables (*under construction*).
