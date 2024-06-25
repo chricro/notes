@@ -2,18 +2,10 @@
 layout: post
 title: Introduction
 ---
-Probabilistic graphical modeling is a branch of machine learning that studies how to use probability distributions to describe the world and to make useful predictions about it.
-
-There are dozens of reasons to learn about probabilistic modeling.
-For one, it is a fascinating scientific field with a beautiful theory that bridges in surprising ways two very different branches of mathematics: probability and graph theory. Probabilistic modeling also has intriguing connections to philosophy, particularly the question of causality.
-
-At the same time, probabilistic modeling is widely used throughout machine learning and in many real-world applications. These techniques can be used to solve problems in fields as diverse as medicine, language processing, vision, and many others.
-
-This combination of elegant theory and powerful applications makes graphical models one of the most fascinating topics in modern artificial intelligence and computer science{% include sidenote.html id='note_turing' note='The 2011 Turing award (considered to be the "Nobel prize of computer science") was recently awarded to [Judea Pearl](http://amturing.acm.org/award_winners/pearl_2658896.cfm) for founding the field of probabilistic graphical modeling.' %}.
+Probabilistic graphical modeling is a branch of machine learning that studies how to use probability distributions to describe the world and to make useful predictions about it. These techniques can be used to solve problems in fields as diverse as medicine, language processing, vision, and many others.
 
 ## Probabilistic modeling
 
-But what is, exactly, probabilistic modeling? When trying to solve a real-world problem using mathematics, it is very common to define a mathematical model of the world in the form of an equation.
 Perhaps the simplest model would be a linear equation of the form
 
 $$ y = \beta^T x, $$
@@ -29,14 +21,12 @@ Given such a model, we could ask questions such as "what is the probability that
 - Typically, we cannot perfectly predict the future. We often don't have enough knowledge about the world, and often the world itself is stochastic.
 - We need to assess the confidence of our predictions; often, predicting a single value is not enough, we need the system to output its beliefs about what's going on in the world.
 
-In this course, we will study principled ways of reasoning about uncertainty and use ideas from both probability and graph theory to derive efficient machine learning algorithms for this task. We will find answers to many interesting questions, such as:
+We will find answers to many interesting questions, such as:
 
 - What are the tradeoffs between computational complexity and the richness of a probabilistic model?
 - What is the best model for inferring facts about the future, given a fixed dataset and computational budget?
 - How does one combine prior knowledge with observed evidence in a principled way to make predictions?
 - How can we rigorously analyze whether $$A$$ is the cause of $$B$$, or vice versa?
-
-In addition, we will also see many examples of how to apply probabilistic techniques to various problems, such as disease prediction, image understanding, language analysis, etc.
 
 ## The difficulties of probabilistic modeling
 
