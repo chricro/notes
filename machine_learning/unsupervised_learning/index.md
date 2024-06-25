@@ -16,7 +16,7 @@ Let $$l$$ be the edge length of the smallest hyper-cube that contains all $$k$$-
 
 If $$d=100$$, l=0.955$$; if $$d=1,000, l=0.995$$. In this case, the k-NN are not particularly closer (and therefore more similar) than any other data points in the training set. Why would the test point share the label with those k-nearest neighbors, if they are not actually similar to it?
 
-One might think that one rescue could be to increase the number of training samples, $$n$$, until the nearest neighbors are truly close to the test point. However, in this case $$n=\frac{k}/{l^d}$$ would grow exponentially. This illustrates the principle of *curse of dimentionality*.
+One might think that one rescue could be to increase the number of training samples, $$n$$, until the nearest neighbors are truly close to the test point. However, in this case $$n=\frac{k}{l^d}$$ would grow exponentially. This illustrates the principle of *curse of dimentionality*.
 
 ## Dimensionality reduction
 
@@ -30,7 +30,7 @@ This could help to:
 - Reduce storage and computational costs
 
 Some dimensionality reduction methods include *Principal Components Analysis* (PCA), *kernel PCA*, *Nonnegative Matrix Factorisation* (NMF), *Linear Discriminant Analysis* (LDA), *Generalised Discriminant Analysis* (GDA),
-$Manifold learning$ approaches, including $Locally Linear Embedding$.
+*Manifold learning* approaches, including *Locally Linear Embedding*.
 
 ## Principal Component Analysis
 
