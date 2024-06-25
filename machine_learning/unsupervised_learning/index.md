@@ -22,25 +22,23 @@ One might think that one rescue could be to increase the number of training samp
 
 We want to find a low-dimensional representation that captures the statistical properties of high-dimensional data.
 
-- Data compression and visualisation
-- Preprocessing before supervised learning (to improve performance of the model; regularization to reduce overfitting)
+This could help to:
+
+- Compress and visualize data
+- Preprocess data before supervised learning to improve model performance and reduce overfitting
 - Simplify the description of massive datasets by removing uninformative dimensions
 - Reduce storage and computational costs
 
-Low dimensional representations can then be used as feature vectors in machine learning algorithms.
-
-Some dimensionality reduction methods include:
-
-- Principal Components Analysis (PCA)
-- Extensions of PCA, including Kernel PCA
-- Nonnegative matrix factorisation (NMF)
-- Linear discriminant analysis (LDA)
-- Generalised discriminant analysis (GDA)
-- Manifold learning approaches, including Local Linear Embedding
+Some dimensionality reduction methods include *Principal Components Analysis* (PCA), *kernel PCA*, *Nonnegative Matrix Factorisation* (NMF), *Linear Discriminant Analysis* (LDA), *Generalised Discriminant Analysis* (GDA),
+$Manifold learning$ approaches, including $Locally Linear Embedding$.
 
 ## Principal Component Analysis
 
 Principal component analysis is a multivariate technique which allows to analye the statistical structure of high dimensional dependent observations by representing data using orthogonal variables called principal components.
+
+There are several equivalent ways of deriving the principal components mathematically. The simplest one is by finding the projections which maximize the variance. The first principal component is the direction in space along which projections have the largest variance. The second principal component is the direction which
+maximizes variance among all directions orthogonal to the first. The $$k$$th component is the variance-maximizing direction orthogonal to the previous $$k-1$$ components. There are $$p$$ principal components in all.
+Rather than maximizing variance, it might sound more plausible to look for the projection with the smallest average (mean-squared) distance between the original vectors and their projections on to the principal components; this turns out to be equivalent to maximizing the variance.
 
 Let $$(X_i)_{1\leq i\leq n}$$ be iid random variables in $$\mathbb{R}^d$$ and consider the matrix $$X\in\mathbb{R}^{n\times d}$$ such that the $$i$$-th row of $$X$$ is the observation $$X_i^T$$.
 
