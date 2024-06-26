@@ -59,11 +59,11 @@ $$\sum_{i=1}^n \|X_i - UU^T X_i\|^2 = \sum_{i=1}^n \|X_i\|^2 - \operatorname{tra
 
 Therefore, solving the PCA problem boils down to computing $$U_{\star} \in \underset{U \in \mathbb{R}^{d \times p}, U^T U = I_p}{\operatorname{argmax}} \operatorname{trace}\left(U^T \Sigma_n U\right)$$.
 
-Let $$v_1, ..., v_d$$ be orthonormal eigenvectors associated with the eigenvalues $$\lambda_i \geq ... \geq \lambda_d$$ of $$\Sigma_n$$. Then a solution to the PCA problem is given by the matrix $$U_*$$ with columns $$v_1, ..., v_p$$ and $$W_* = U_*^T$$
+Let $$v_1, ..., v_d$$ be orthonormal eigenvectors associated with the eigenvalues $$\lambda_1 \geq ... \geq \lambda_d$$ of $$\Sigma_n$$. Then a solution to the PCA problem is given by the matrix $$U_*$$ with columns $$v_1, ..., v_p$$. Here is the pseudo-code of the PCA algorithm:
 
 1. Center $$X\in\mathbb{R}^{n\times d}$$
-2.  Compute the covariance matrix $$\Sigma_n$$, obtain its eigenvectors $$u_i \in \mathbb{R}^{p}$$ sorted by eigenvalues in decreasing order
-3.  Build the matrice $$U_* = (u_1, ..., u_p) \in \mathbb{R}^{d \times p}$$ by stacking the $p$ eigenvectors alongside one another.
+2.  Compute the covariance matrix $$\Sigma_n$$, obtain its eigenvectors $$v_i \in \mathbb{R}^{d}$$ sorted by eigenvalues in decreasing order
+3.  Build the matrice $$U_* = (v_1, ..., v_p) \in \mathbb{R}^{d \times p}$$ by stacking the $$p$$ eigenvectors $v_i$ alongside one another.
 4.  Compressed data are given by $$Z = XU_* \in \mathbb{R}^{n \times p}$$
 
 PCA only allows dimensionality reduction based on principal components which are linear combinations of the variables. When the data has more complex structures which cannot be well represented in a linear subspace, standard PCA fails. Kernel PCA allows us to generalize standard PCA to nonlinear dimensionality reduction.
