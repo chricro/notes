@@ -16,7 +16,7 @@ In general, we known neither the conditional densities $$p(x|y = k)$$ nor the cl
 * The discriminant classifiers partitions $$X = \mathbb{R}^d$$ into regions with the same class predictions via separating hyperplanes. The conditional densities are modeled as multivariate normal. For all class $$k$$, conditionnally on $$\lbrace Y = k \rbrace$$,
 $$X \sim N(\mu_k,\Sigma_k)$$.
 
-The discriminant functions are given by: $$g_k(X) = log(P(X|Y=k) + log(P(Y=k))$$.
+The discriminant functions are given by: $$g_k(X) = \log(P(X|Y=k) + \log(P(Y=k))$$.
 In a two-classes problem, the optimal classifier is $$f^*: x \mapsto 2 \cdot \mathbb{1} \lbrace g_1(x) - g_{-1}(x) > 0 \rbrace - 1$$.
 
 *Linear Discriminant Analysis* (LDA) assumes $$\Sigma_k = \Sigma$$ for all $$k$$; *Quadratic Discriminant Analysis* (QDA) assumes differents $$\Sigma_k$$ in each class (the decision boundaries are hence quadratic.
@@ -34,12 +34,12 @@ Examples: logistic regression, K-nearest neighbors, SVMs, perceptrons, etc.
 The objective is to predict the label $$Y\in \lbrace 0, 1 \rbrace$$ based on $$X \in \mathbb{R}^d$$. Logistic regression models the distribution of $$Y$$ given $$X$$.
 $$P(Y=1|X) = \sigma(<w,X>+b)$$ where $$w \in \mathbb{R}^d$$ is a vector of model weights and $$b \in \mathbb{R}$$ is the intercept, and $$\sigma$$ is the sigmoid function $$\sigma: z \mapsto \frac{1}{1+e^{-z}}$$
 
-We define the log-odd ratio as: $$log(P(Y=1|X)) - log(P(Y=0|X)) = <w, X> +b$$. Thus, we have $$P(Y=1|X) \geq P(Y=0|X) \iff <w,X> +b$$, defining our classification rule (linear classification rule) which requires to estimate $$w$$ and $$b$$.
+We define the log-odd ratio as: $$\log(P(Y=1|X)) - \log(P(Y=0|X)) = <w, X> +b$$. Thus, we have $$P(Y=1|X) \geq P(Y=0|X) \iff <w,X> +b$$, defining our classification rule (linear classification rule) which requires to estimate $$w$$ and $$b$$.
 These latter parameters can be estimated by Maximum Likelihood estimation.
 
 For a multi-label classification, we can extend the logistic regression. The objective is to predict the label $$Y \in \lbrace 1, ..., M \rbrace$$ based on $$X \in \mathbb{R}^d$$. Softmax regression models the distribution of $$Y$$ given $$X$$.
 
-For all $$1 \leq m \leq M$$, $$z_m = \langle w_m, X \rangle + b_m$$ and $$P(Y=m \mid X) = \operatorname{softmax}(z)_m$$ where $$z \in \mathbb{R}^M$$, $$w_m \in \mathbb{R}^d$$ is a vector of model weights and $$b_m \in \mathbb{R}$$ is an intercept, and $$\operatorname{softmax}(z)_m = \frac{\exp(z_m)}{\sum_{j=1}^M \exp(z_j)}$$. One neuron is a multi-class extension of the logistic regression model.
+For all $$1 \leq m \leq M$$, $$z_m = \langle w_m, X \rangle + b_m$$ and $$P(Y=m \mid X) = \operatorname{softmax}(z)_m$$ where $$z \in \mathbb{R}^M$$, $$w_m \in \mathbb{R}^d$$ is a vector of model weights and $$b_m \in \mathbb{R}$$ is an intercept, and $$\operatorname{softmax}(z)_m = \frac{\exp(z_m)}{\sum_{j=1}^M \exp(z_j)}$$. One neuron is a multi-class extension of the $$\logistic regression model.
 
 
 ## Regression:
