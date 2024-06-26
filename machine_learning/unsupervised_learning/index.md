@@ -14,7 +14,7 @@ Formally, consider the unit cube $$[0,1]^d$$. All training data is sampled unifo
 
 Let $$l$$ be the edge length of the smallest hyper-cube that contains all $$k$$-nearest neighbor of a test point. Then $$l \approx (\frac{k}{n})^{\frac{1}{d}}$$.
 
-If $$d=100$$, l=0.955$$; if $$d=1,000, l=0.995$$. In this case, the k-NN are not particularly closer (and therefore more similar) than any other data points in the training set. Why would the test point share the label with those k-nearest neighbors, if they are not actually similar to it?
+If $$d=100, l=0.955$$; if $$d=1,000, l=0.995$$. In this case, the k-NN are not particularly closer (and therefore more similar) than any other data points in the training set. Why would the test point share the label with those k-nearest neighbors, if they are not actually similar to it?
 
 One might think that one rescue could be to increase the number of training samples, $$n$$, until the nearest neighbors are truly close to the test point. However, in this case $$n=\frac{k}{l^d}$$ would grow exponentially. This illustrates the principle of *curse of dimentionality*.
 
