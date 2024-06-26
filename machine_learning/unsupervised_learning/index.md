@@ -22,17 +22,16 @@ One might think that one rescue could be to increase the number of training samp
 
 We want to find a low-dimensional representation that captures the statistical properties of high-dimensional data.
 
-This could help to:
+The main applications are among the following:
 
 - Compress and visualize data
 - Preprocess data before supervised learning to improve model performance and reduce overfitting
 - Simplify the description of massive datasets by removing uninformative dimensions
 - Reduce storage and computational costs
 
-Some dimensionality reduction methods include *Principal Components Analysis* (PCA), *kernel PCA*, *Nonnegative Matrix Factorisation* (NMF), *Linear Discriminant Analysis* (LDA), *Generalised Discriminant Analysis* (GDA),
-*Manifold learning* approaches, including *Locally Linear Embedding*.
+Some dimensionality reduction methods include *Principal Components Analysis* (PCA), *Kernel PCA*, *Nonnegative Matrix Factorisation* (NMF), *Linear Discriminant Analysis* (LDA), *Generalised Discriminant Analysis* (GDA), *Nonlinear independent component analysis* (ICA), *Uniform manifold approximation* (UMA), *Locally Linear Embedding* (LLE), and also *Random Forests*.
 
-## Principal Component Analysis
+## Principal Component Analysis (PCA)
 
 Principal component analysis is a multivariate technique which allows to analye the statistical structure of high dimensional dependent observations by representing data using orthogonal variables called principal components.
 
@@ -62,6 +61,13 @@ Therefore, solving the PCA problem boils down to computing $$U_{\star} \in \unde
 
 Let $$v_1, ..., v_d$$ be orthonormal eigenvectors associated with the eigenvalues $$\lambda_i \geq ... \geq \lambda_d$$ of $$\Sigma_n$$. Then a solution to the PCA problem is given by the matrix $$U_*$$ with columns $$v_1, ..., v_p$$ and $$W_* = U_*^T$$
 
-- Compute the matrix $$\Sigma_n$$, obtain its eigenvectors sorted by eigenvalues
-- Build the matrices $$U_*$$ and $$W_* = U_*^T$$
-- Compressed data in $$\mathbb{R}^p$$ are given by $$W_*X_i$$ for all $$1\leq i \leq n$$.
+1. Center $$X\in\mathbb{R}^{n\times d}$$
+2.  Compute the covariance matrix $$\Sigma_n$$, obtain its eigenvectors $$u_i \in \mathbb{R}^{p}$$ sorted by eigenvalues in decreasing order
+3.  Build the matrice $$U_* = (u_1, ..., u_p) \in \mathbb{R}^{d \times p}$$ by stacking the $p$ eigenvectors alongside one another.
+4.  Compressed data are given by $$Z = XU_* \in \mathbb{R}^{n \times p}$$
+
+PCA only allows dimensionality reduction based on principal components which are linear combinations of the variables. When the data has more complex structures which cannot be well represented in a linear subspace, standard PCA fails. Kernel PCA allows us to generalize standard PCA to nonlinear dimensionality reduction.
+
+## Cluster analysis
+
+
