@@ -11,7 +11,7 @@ There are two main approaches for doing classification: the *generative approach
 Examples: LDA, QDA, Naive Bayes, etc.
 
 * The Bayes Classifier chooses the class with the greatest probability given the observation, i.e. $$\operatorname{argmax}_k p(y = k|x) = \operatorname{argmax}_k p(x|y = k)p(y = k)$$.
-In general, we known neither the conditional densities $$p(x|y = k)$$ nor the class probabilities $$p(y = k)$$. The plug-in classifier uses estimate of these probabilities.
+In general, we know neither the conditional densities $$p(x|y = k)$$ nor the class probabilities $$p(y = k)$$. The plug-in classifier uses estimate of these probabilities.
 
 * The discriminant classifiers partitions $$X = \mathbb{R}^d$$ into regions with the same class predictions via separating hyperplanes. The conditional densities are modeled as multivariate normal. For all class $$k$$, conditionnally on $$\lbrace Y = k \rbrace$$,
 $$X \sim N(\mu_k,\Sigma_k)$$.
