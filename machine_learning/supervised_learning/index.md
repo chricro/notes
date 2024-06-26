@@ -17,7 +17,7 @@ In general, we known neither the conditional densities $$p(x|y = k)$$ nor the cl
 $$X \sim N(\mu_k,\Sigma_k)$$.
 
 The discriminant functions are given by: $$g_k(X) = log(P(X|Y=k) + log(P(Y=k))$$.
-In a two-classes problem, the optimal classifier is $$f^*: x \mapsto 2\dot \mathbb{1}\lbrace g_1(x) - g_{-1}(x) \rbrace -1$$.
+In a two-classes problem, the optimal classifier is $$f^*: x \mapsto 2 \cdot \mathbb{1} \lbrace g_1(x) - g_{-1}(x) > 0 \rbrace - 1$$.
 
 *Linear Discriminant Analysis* (LDA) assumes $$\Sigma_k = \Sigma$$ for all $$k$$; *Quadratic Discriminant Analysis* (QDA) assumes differents $$\Sigma_k$$ in each class (the decision boundaries are hence quadratic.
 
@@ -39,7 +39,8 @@ These latter parameters can be estimated by Maximum Likelihood estimation.
 
 For a multi-label classification, we can extend the logistic regression. The objective is to predict the label $$Y \in \lbrace 1, ..., M \rbrace$$ based on $$X \in \mathbb{R}^d$$. Softmax regression models the distribution of $$Y$$ given $$X$$.
 
-For all $$1 \leq m \leq M, z_m = <w_m,X> + b_m$$ and $$P(Y=m|X)=\operatorname{softmax}(z)_m$$ where $$z\in \mathbb{R}^M, w_m\in \mathbb{R}^d$$ is a vector of model weights and $$b_m \in \mathbb{R}$$ is an intercept and $$\mathop{\text{softmax}}(z)_m = \frac{exp(z_m)}{\Sigma_{j=1}^M exp(z_j)}$$. One neuron is a multi-class extension of the logistic regression model.
+For all $$1 \leq m \leq M$$, $$z_m = \langle w_m, X \rangle + b_m$$ and $$P(Y=m \mid X) = \operatorname{softmax}(z)_m$$ where $$z \in \mathbb{R}^M$$, $$w_m \in \mathbb{R}^d$$ is a vector of model weights and $$b_m \in \mathbb{R}$$ is an intercept, and $$\operatorname{softmax}(z)_m = \frac{\exp(z_m)}{\sum_{j=1}^M \exp(z_j)}$$. One neuron is a multi-class extension of the logistic regression model.
+
 
 ## Regression:
 
