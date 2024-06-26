@@ -8,7 +8,9 @@ title: Contents
 
 ## Machine Learning
 
-[Unsupervised learning](machine_learning/unsupervised_learning): Principal Component Analysis (PCA), Kernel PCA
+[Supervised learning][machine_learning/supervised_learning/): Generative approache (LDA/GDA, Naive Bayes) vs discriminant approach (logistic regression)
+
+[Unsupervised learning](machine_learning/unsupervised_learning/): Principal Component Analysis (PCA), Kernel PCA
 
 
 1. [Introduction](preliminaries/introduction/): What is probabilistic graphical modeling? Overview of the course.
