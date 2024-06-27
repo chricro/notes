@@ -17,22 +17,43 @@ Examples: LDA, QDA, Naive Bayes, etc.
 The discriminant classifiers partitions $$X = \mathbb{R}^d$$ into regions with the same class predictions via separating hyperplanes. The conditional densities are modeled as multivariate normal. For all class $$k$$, conditionnally on $$\lbrace Y = k \rbrace$$,
 $$X \sim N(\mu_k,\Sigma_k)$$.
 
-The discriminant functions are given by: $$g_k(X) = \log(P(X|Y=k) + \log(P(Y=k))$$.
-In a two-classes problem, the optimal classifier is $$f^*: x \mapsto 2 \cdot \mathbb{1} \lbrace g_1(x) - g_{-1}(x) > 0 \rbrace - 1$$.
+The discriminant functions are given by
+
+$$g_k(X) = \log(P(X|Y=k) + \log(P(Y=k))$$.
+
+In a two-classes problem, the optimal classifier is
+
+$$f^*: x \mapsto 2 \cdot \mathbb{1} \lbrace g_1(x) - g_{-1}(x) > 0 \rbrace - 1$$.
 
 - LDA assumes $$\Sigma_k = \Sigma$$ for all $$k$$
 - QDA assumes differents $$\Sigma_k$$ in each class (the decision boundaries are hence quadratic).
 
 ### The Naive Bayes classifier
 
-* The Bayes classifier chooses the class with the greatest probability given the observation, i.e. $$\text{argmax}_k p(y = k \mid x) = \text{argmax}_k p(x \mid y = k) p(y = k)$$. In general, we know neither the conditional densities $$p(x \mid y = k)$$ nor the class probabilities $$p(y = k)$$. The plug-in classifier uses estimates of these probabilities.
+* The Bayes classifier chooses the class with the greatest probability given the observation, i.e.
+
+$$\text{argmax}_k p(y = k \mid x) = \text{argmax}_k p(x \mid y = k) p(y = k)$$
+
+In general, we know neither the conditional densities $$p(x \mid y = k)$$ nor the class probabilities $$p(y = k)$$. The plug-in classifier uses estimates of these probabilities.
 
 * The Naive Bayes classifier is another plug-in classifier with a simple generative model: it "naïvely" assumes all measured variables/features are conditionally independent given the class label:
-$$p(x|y = k) = \prod_{i=1}^d p(x_i|y = k,\theta_{ik})$$. One advantage of this classifier is that it allows to easily mix and match different types of features and handle missing data. It is often used with categorical data, e.g. text document classification. The form of the class-conditional density depends of the type of each features.
+
+$$p(x|y = k) = \prod_{i=1}^d p(x_i|y = k,\theta_{ik})$$
+
+One advantage of this classifier is that it allows to easily mix and match different types of features and handle missing data. It is often used with categorical data, e.g. text document classification. The form of the class-conditional density depends of the type of each features.
+
 Examples:
-For real-valued features, the Gaussian distribution can be used $$p(x|y=k'\theta)=\prod_{j=1}^d \Phi(x|\mu ,\sigma^2)$$.
-For binary features, $$x_j \in  \lbrace 0, 1 \rbrace$$, the Bernoulli distribution can be used: $$p(x|y = k′\theta) = \prod_{j=1}^d Ber(x_j|\theta_{jk})$$. This is called the *Bernoulli Naive Bayes model*.
-For count data, $$x_j \in \lbrace 0, 1, 2, ... \rbrace$$, the multinomial distribution can be used. This is called the *Multinomial Naive Bayes model*.
+
+* For real-valued features, the Gaussian distribution can be used
+
+$$p(x|y=k'\theta)=\prod_{j=1}^d \Phi(x|\mu ,\sigma^2)$$
+
+* For binary features, $$x_j \in  \lbrace 0, 1 \rbrace$$, the Bernoulli distribution can be used:
+  
+$$p(x|y = k′\theta) = \prod_{j=1}^d Ber(x_j|\theta_{jk})$$
+
+This is called the *Bernoulli Naive Bayes model*.
+* For count data, $$x_j \in \lbrace 0, 1, 2, ... \rbrace$$, the multinomial distribution can be used. This is called the *Multinomial Naive Bayes model*.
 
 ## The discriminant approach
 
@@ -42,14 +63,38 @@ Examples: logistic regression, K-nearest neighbors, SVMs, perceptrons, etc.
 ### Logic regression
 
 The objective is to predict the label $$Y\in \lbrace 0, 1 \rbrace$$ based on $$X \in \mathbb{R}^d$$. Logistic regression models the distribution of $$Y$$ given $$X$$.
-$$P(Y=1|X) = \sigma(\langle w,X \rangle +b)$$ where $$w \in \mathbb{R}^d$$ is a vector of model weights and $$b \in \mathbb{R}$$ is the intercept, and $$\sigma$$ is the sigmoid function $$\sigma: z \mapsto \frac{1}{1+e^{-z}}$$
 
-We define the log-odd ratio as: $$\log(P(Y=1|X)) - \log(P(Y=0|X)) = \langle w, X \rangle +b$$. Thus, we have $$P(Y=1|X) \geq P(Y=0|X) \iff \langle w,X \rangle +b$$, defining our classification rule (linear classification rule) which requires to estimate $$w$$ and $$b$$.
-These latter parameters can be estimated by Maximum Likelihood estimation.
+$$P(Y=1|X) = \sigma(\langle w,X \rangle +b)$$
+
+where $$w \in \mathbb{R}^d$$ is a vector of model weights and $$b \in \mathbb{R}$$ is the intercept, and $$\sigma$$ is the sigmoid function
+
+$$\sigma: z \mapsto \frac{1}{1+e^{-z}}$$
+
+We define the log-odd ratio as:
+
+$$\log(P(Y=1|X)) - \log(P(Y=0|X)) = \langle w, X \rangle +b$$
+
+Thus, we have
+
+$$P(Y=1|X) \geq P(Y=0|X) \iff \langle w,X \rangle +b$$
+
+defining our classification rule (linear classification rule) which requires to estimate $$w$$ and $$b$$. These latter parameters can be estimated by Maximum Likelihood estimation.
 
 For a multi-label classification, we can extend the logistic regression. The objective is to predict the label $$Y \in \lbrace 1, ..., M \rbrace$$ based on $$X \in \mathbb{R}^d$$. Softmax regression models the distribution of $$Y$$ given $$X$$.
 
-For all $$1 \leq m \leq M$$, $$z_m = \langle w_m, X \rangle + b_m$$ and $$P(Y=m \mid X) = \text{softmax}(z)_m$$ where $$z \in \mathbb{R}^M$$, $$w_m \in \mathbb{R}^d$$ is a vector of model weights and $$b_m \in \mathbb{R}$$ is an intercept, and $$\text{softmax}(z)_m = \frac{\exp(z_m)}{\sum_{j=1}^M \exp(z_j)}$$. One neuron is a multi-class extension of the logistic regression model.
+For all $$1 \leq m \leq M$$,
+
+$$z_m = \langle w_m, X \rangle + b_m$$
+
+and
+
+$$P(Y=m \mid X) = \text{softmax}(z)_m$$
+
+where $$z \in \mathbb{R}^M$$, $$w_m \in \mathbb{R}^d$$ is a vector of model weights and $$b_m \in \mathbb{R}$$ is an intercept, and
+
+$$\text{softmax}(z)_m = \frac{\exp(z_m)}{\sum_{j=1}^M \exp(z_j)}$$
+
+One neuron is a multi-class extension of the logistic regression model.
 
 
 # Regression:
