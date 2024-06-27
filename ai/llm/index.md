@@ -16,25 +16,17 @@ Two MoE papers: https://arxiv.org/pdf/1701.06538.pdf and https://arxiv.org/pdf/1
 
 ## MoE papers
 
----
-| Date | Paper | Author | Content | 
-| --- | --- | --- | --- |
-| 01-2017 | [Outrageously large neural networks: the sparsely-gated mixture-of-experts layer](https://arxiv.org/pdf/1701.06538.pdf) | Google | Review |
-| 09-2022 | [A review of sparse expert models in deep learning](https://arxiv.org/pdf/2209.01667.pdf) | Google | Review |
-| 11-2022 | [Megablocks: efficient sparse training with mixture of experts](https://arxiv.org/pdf/2211.15841.pdf) | Stanford, Microsoft, Google | [Review](https://github.com/chricro/personal-notes/blob/main/papers/paper_notes_2.md) |
-| 02-2022 | [Mixture-of-Experts with Expert Choice Routing](https://arxiv.org/pdf/2202.09368.pdf) | Google | [Review](https://github.com/chricro/personal-notes/blob/main/papers/paper_notes_1.md) |
-| 01-2021 | [Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity](https://arxiv.org/pdf/2101.03961.pdf) | Google | Review |
----
+- [Outrageously large neural networks: the sparsely-gated mixture-of-experts layer](https://arxiv.org/pdf/1701.06538.pdf) from Google (01-2017)
+- [A review of sparse expert models in deep learning](https://arxiv.org/pdf/2209.01667.pdf) from Google (09-2022)
+- [Megablocks: efficient sparse training with mixture of experts](https://arxiv.org/pdf/2211.15841.pdf) from Stanford, Microsoft, Google (11-2022)
+- [Mixture-of-Experts with Expert Choice Routing](https://arxiv.org/pdf/2202.09368.pdf) from Google (02-2022)
+- [Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity](https://arxiv.org/pdf/2101.03961.pdf) from Google (01-2021)
 
 ## Speedup the inference of LLMs
 
----
-| Date | Paper | Author | Content |
-| --- | --- | --- | --- |
-| 01-2024 | [MEDUSA: Simple LLM Inference Acceleration Framework with Multiple Decoding Heads](https://arxiv.org/pdf/2401.10774.pdf) | TogetherAI | [Review](https://github.com/chricro/personal-notes/blob/main/papers/paper_notes_3.md) |
-| 01-2024 | [DeepSpeed-FastGen: High-throughput Text Generation for LLMs via MII and DeepSpeed-Inference](https://arxiv.org/pdf/2401.08671.pdf) | Microsoft | Review |
-| 01-2024 | [EAGLE: Speculative Sampling Requires Rethinking Feature Uncertainty](https://arxiv.org/pdf/2401.15077.pdf) | Microsoft | Review |
----
+- [MEDUSA: Simple LLM Inference Acceleration Framework with Multiple Decoding Heads](https://arxiv.org/pdf/2401.10774.pdf) from TogetherAI (01-2024)
+- [DeepSpeed-FastGen: High-throughput Text Generation for LLMs via MII and DeepSpeed-Inference](https://arxiv.org/pdf/2401.08671.pdf) from Microsoft (01-2024)
+- [EAGLE: Speculative Sampling Requires Rethinking Feature Uncertainty](https://arxiv.org/pdf/2401.15077.pdf) from Microsoft (01-2024)
 
 List of LLM inference: https://llm.extractum.io/gpu-hostings/
 
@@ -72,23 +64,20 @@ DPO with HuggingFace Trainer: for large prompts, use gradient accumulating = 4; 
 
 ## Reasoning and planning approaches
 
-* [Language Agent Tree Search Unifies Reasoning Acting and Planning in Language Models](https://arxiv.org/pdf/2310.04406.pdf)
-* [STaR: Bootstrapping Reasoning With Reasoning](https://arxiv.org/pdf/2203.14465.pdf) [Review](https://github.com/chricro/personal-notes/blob/main/papers/paper_notes_4.md)
-* [Quiet-STaR: Language Models Can Teach Themselves to Think Before Speaking](https://arxiv.org/pdf/2403.09629.pdf)
+- [Language Agent Tree Search Unifies Reasoning Acting and Planning in Language Models](https://arxiv.org/pdf/2310.04406.pdf)
+- [STaR: Bootstrapping Reasoning With Reasoning](https://arxiv.org/pdf/2203.14465.pdf)
+- [Quiet-STaR: Language Models Can Teach Themselves to Think Before Speaking](https://arxiv.org/pdf/2403.09629.pdf)
 
 ## Important papers
 
 ### LLM
 
----
-| Name of the paper | Authors | Date | Content | 
-| --- | --- | --- | --- |
-| [Attention is all you need](https://arxiv.org/pdf/1706.03762.pdf) | Vaswani et al. (Google) | 06-2017 | transformer architecture and self-attention mechanism |
-| [An Image is Worth 16x16 Words](https://arxiv.org/pdf/2010.11929.pdf) | Dosovitskiy et al. (Google) | 10-2020 | ViT architecture (positional encoding added on patches) |
-| [LlaMa 2: Open Foundation and Fine-Tuned Chat Models](https://arxiv.org/pdf/2307.09288.pdf) | Touvron et al. (FAIR) | 07-2023 | Helpfuness and safety alignment (RLHF) |
-| [Training Compute-Optimal Large Language Models](https://arxiv.org/pdf/2203.15556.pdf) | Hoffmann et al. (DeepMind) | 03-2022 | Chinchilla paper |
-| [Direct Preference Optimization: Your Language Model is Secretly a Reward Model](https://arxiv.org/pdf/2305.18290.pdf) | Stanford | 05-2023 | different alignment algorithm (simpler than RLHF) |
----
+
+-[Attention is all you need](https://arxiv.org/pdf/1706.03762.pdf) from Vaswani et al. (Google) | 06-2017 | transformer architecture and self-attention mechanism
+-[An Image is Worth 16x16 Words](https://arxiv.org/pdf/2010.11929.pdf) from Dosovitskiy et al. (Google) | 10-2020 | ViT architecture (positional encoding added on patches)
+-[LlaMa 2: Open Foundation and Fine-Tuned Chat Models](https://arxiv.org/pdf/2307.09288.pdf) from Touvron et al. (FAIR) | 07-2023 | Helpfuness and safety alignment (RLHF)
+-[Training Compute-Optimal Large Language Models](https://arxiv.org/pdf/2203.15556.pdf) from Hoffmann et al. (DeepMind) | 03-2022 | Chinchilla paper |
+-[Direct Preference Optimization: Your Language Model is Secretly a Reward Model](https://arxiv.org/pdf/2305.18290.pdf) from Stanford | 05-2023 | different alignment algorithm (simpler than RLHF)
 
 [VOYAGER](https://arxiv.org/pdf/2305.16291.pdf): An Open-Ended Embodied Agent with Large Language Models  
 Minecraft agent stocking knowledge -> how the knowledge is retrieved? simply cosine similarity? (01/12/2023)
@@ -96,14 +85,9 @@ Minecraft agent stocking knowledge -> how the knowledge is retrieved? simply cos
 
 ## Deprecated papers (but still interesting to read)
 
----
-| Name of the paper | Authors | Date | Content |
-| --- | --- | --- | --- |
-| [Neural Machine Translation by Jointly Learning to Align and Translate](https://arxiv.org/pdf/1409.0473.pdf) | Bahdanau et al. | 2016 | Improvement on RNN architecture to translate longer sequences (context parameter) |
----
+[Neural Machine Translation by Jointly Learning to Align and Translate](https://arxiv.org/pdf/1409.0473.pdf) | Bahdanau et al. | 2016 | Improvement on RNN architecture to translate longer sequences (context parameter)
 
 # Other great resources
-
 
 ## Transformers aspects to improve:
 
@@ -141,14 +125,10 @@ CogVLM, Adept Fuyu, MiniGPT, BLIP-2, ...
 
 Pretrained models:
 
----
-| Model | Date | Number of parameters | Context window (tokens) | Comments |
-| --- | --- | --- | --- | --- |
-| LlaMa | 2023-02 | Up to 65B | 2048 | Three modifications compared to the original transformer architecture: RMSNorm for pre-normalization; rotary embeddings; SwiGLU activation function |
-| LlaMa2 | 2023-07 | Up to 70B | 4096 | Fine-tuned LLMs, called Llama 2-Chat, are optimized for dialogue use cases |
-| GPT4 | 2023-03 | 1,760B | 8,192 and 32,768 | blabla |
-| Orca 2 | 2023 | 7/13B | 4,096 | Descendant of LLaMA 2 developed by Microsoft obtained by fine-tuning the corresponding LlaMa 2 base models on tailored, high quality synthetic data from GPT4 |
----
+- LlaMa | 2023-02 | Up to 65B | 2048 | Three modifications compared to the original transformer architecture: RMSNorm for pre-normalization; rotary embeddings; SwiGLU activation function
+- LlaMa2 | 2023-07 | Up to 70B | 4096 | Fine-tuned LLMs, called Llama 2-Chat, are optimized for dialogue use cases |
+- GPT4 | 2023-03 | 1,760B | 8,192 and 32,768 | blabla |
+- Orca 2 | 2023 | 7/13B | 4,096 | Descendant of LLaMA 2 developed by Microsoft obtained by fine-tuning the corresponding LlaMa 2 base models on tailored, high quality synthetic data from GPT4
 
 see the [LLM index](https://sapling.ai/llm/index?WT.mc_id=academic-105485-koreyst) for more model comparison
 Other benchmarks: Glue; SuperGlue; MMLU; bigbench, [elo dataset](https://huggingface.co/spaces/lmsys/chatbot-arena-leaderboard)
