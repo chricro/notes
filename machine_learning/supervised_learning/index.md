@@ -19,7 +19,7 @@ $$X \sim N(\mu_k,\Sigma_k)$$.
 
 The discriminant functions are given by
 
-$$g_k(X) = \log(P(X|Y=k) + \log(P(Y=k))$$.
+$$g_k(X) = \log(P(X|Y=k) + \log(P(Y=k))$$
 
 In a two-classes problem, the optimal classifier is
 
