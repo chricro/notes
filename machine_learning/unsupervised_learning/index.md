@@ -63,7 +63,7 @@ Let $$v_1, ..., v_d$$ be orthonormal eigenvectors associated with the eigenvalue
 
 1. Center $$X\in\mathbb{R}^{n\times d}$$
 2.  Compute the covariance matrix $$\Sigma_n$$, obtain its eigenvectors $$v_i \in \mathbb{R}^{d}$$ sorted by eigenvalues in decreasing order
-3.  Build the matrice $$U_* = (v_1, ..., v_p) \in \mathbb{R}^{d \times p}$$ by stacking the $$p$$ eigenvectors $v_i$ alongside one another.
+3.  Build the matrice $$U_* = (v_1, ..., v_p) \in \mathbb{R}^{d \times p}$$ by stacking the $$p$$ eigenvectors $$v_i$$ alongside one another.
 4.  Compressed data are given by $$Z = XU_* \in \mathbb{R}^{n \times p}$$
 
 PCA only allows dimensionality reduction based on principal components which are linear combinations of the variables. When the data has more complex structures which cannot be well represented in a linear subspace, standard PCA fails. Kernel PCA allows us to generalize standard PCA to nonlinear dimensionality reduction.
