@@ -58,9 +58,6 @@ Optimising latency:
 
 ## DPO training
 
-Experiments of 09/04/2024 and 10/04/2024 ([the code can be found here](https://github.com/chricro/personal-notes/blob/main/experiments/10-04-2024)):
-DPO with HuggingFace Trainer: for large prompts, use gradient accumulating = 4; lower the learning rate (5e-7) since the complexity of the task; and increase beta to optimize the positive reward parameter. Don't train over too many data.
-
 
 ## Reasoning and planning approaches
 
