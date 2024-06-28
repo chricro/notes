@@ -19,7 +19,7 @@ To understand the novelty and power of transformers, one can read the following 
 
 - [Neural Machine Translation by Jointly Learning to Align and Translate](https://arxiv.org/pdf/1409.0473.pdf) from Bahdanau et al. (2016). Improvement on RNN architecture to translate longer sequences (context parameter)
 
-Since the official release of GPT-3.5, OpenAI's model has been far beyond both OSS and proprietary models. It is largely assumed that they are using a Mixture of Experts architecture. Mistral gained a significant attention in December 2023 by releasing Mixtral-8x7B which became the most efficient OSS model at that time, using a MoE architecture. MoE is not new in the research domain, here is a list of key papers on this subject:
+Since the official launch of GPT-3.5 in March 2022, OpenAI's model has surpassed both open-source and proprietary models. It is widely believed that a Mixture of Experts (MoE) architecture is utilized. Mistral captured significant attention in December 2023 by releasing Mixtral-8x7B, which was the most efficient open-source model at that time, employing an MoE architecture. MoE is not a new concept in research; here is a list of important papers on this topic:
 
 - [Outrageously large neural networks: the sparsely-gated mixture-of-experts layer](https://arxiv.org/pdf/1701.06538.pdf) from Google (01-2017)
 - [A review of sparse expert models in deep learning](https://arxiv.org/pdf/2209.01667.pdf) from Google (09-2022)
@@ -39,11 +39,11 @@ Instead of having numerous experts (which are essentially FFN layers) during tra
 
 ## Speedup the inference of LLMs
 
-LLMs are huge models (requiring often 7-8B parameters for small models; around 45-70B parameters for larger models and more than 1,700B for GPT-4 models). Therefore, the forward propagation requires the inputs to go through all the model weights neurons during inference to generate the next predicted tokens, which can take some time before getting the whole generated text.
+Large Language Models (LLMs) are substantial, with smaller models often requiring 7-8 billion parameters, larger models around 45-70 billion parameters, and GPT-4 models exceeding 1,700 billion parameters. Therefore, during inference, the input must pass through all the model's weight neurons to generate the next predicted tokens, which can delay the production of the complete text.
 
-We can be interested in optimizing the throughput (number of tokens generated per second, in batch size >=1) or the latency (number of tokens generated per second in batch size = 1).
+Interest might lie in optimizing either the throughput (the number of tokens generated per second with a batch size of at least one) or the latency (the number of tokens generated per second with a batch size of one).
 
-For latency optimization, speculative decoding techniques are often relevant. These technique use a small *draft model* to predict large “target” model’s output, ultimately accelerating inference.
+For reducing latency, speculative decoding techniques are commonly used. These methods employ a smaller "draft model" to anticipate the output of a larger "target model," thereby speeding up inference.
 
 - [MEDUSA: Simple LLM Inference Acceleration Framework with Multiple Decoding Heads](https://arxiv.org/pdf/2401.10774.pdf) from TogetherAI (01-2024): only implemented with Vicuna models for now.
 - [EAGLE: Speculative Sampling Requires Rethinking Feature Uncertainty](https://arxiv.org/pdf/2401.15077.pdf) from Microsoft (01-2024)
@@ -65,7 +65,7 @@ A good comparison of different quantization techniques can be found in this [lin
 
 - [FP8 vs INT8](https://arxiv.org/pdf/2303.17951.pdf)
 
-In 2022, a relatively high generated output in batch size 1 would be around 150 tokens/s for medium models (45-70B params); and 300 tokens/s for small models (7-8B params). Groq achieves to attain 500 tokens/s for medium models (x2-3 on FireWorksAI, TogetherAI specialized in accelerated inference). This is just a trick, since they don't use classic GPUs (A100, H100) but their own TPU (Tensor Processing Unit), enabling them to get a deterministic control of the tokens generation.
+In 2022, a relatively high output for batch size 1 was about 150 tokens per second for medium models (45-70B parameters) and 300 tokens per second for small models (7-8B parameters). Groq managed to achieve 500 tokens per second for medium models, which is two to three times faster than the rates on FireWorksAI and TogetherAI, both of which specialize in accelerated inference. This performance is not achieved through traditional GPUs (such as A100 or H100) but rather through their proprietary TPU (Tensor Processing Unit), which allows for deterministic control over token generation.
 
 - Paper on the [tensor streaming processor](https://wow.groq.com/wp-content/uploads/2020/06/ISCA-TSP.pdf) and the corresponding [youtube video](https://www.youtube.com/watch?v=xTT2GpdSRKs)
 - [GroqDay](https://www.youtube.com/watch?v=upljocX5mrk) in December 2021
@@ -118,7 +118,9 @@ A nice summary of Vision-Language models is provided in a [paper](https://arxiv.
 
 Among popular models in 2023, we can find:
 
-LLaMa series (2023-02), up to 65B parameters and 2,048 context-window. 3 modifications compared to the original transformer architecture (RMSNorm for pre-normalization; rotary embeddings; SwiGLU activation function). Then the LLaMa2 series (2023-07) up to 70B and 4,096 context-window focused on optimizing dialogue use case. As a comparison, GPT4 (2023-03) has 1,760B parameters and 8,192 and 32,768 context-window. GPT4 generated data are often use to fine-tune other models, such as Orca2 (a descendant of LLaMa2 developed by Microsoft in 2023) which trains LLaMa2 base models on high-quality synthetic data from GPT-4. 
+The LLaMa series, released in February 2023, features models with up to 65 billion parameters and a 2,048 token context window. It introduces three modifications to the traditional transformer architecture: RMSNorm for pre-normalization, rotary embeddings, and the SwiGLU activation function. The subsequent LLaMa2 series, launched in July 2023, scales up to 70 billion parameters and a 4,096 token context window, specifically optimizing for dialogue applications.
+
+For comparison, GPT-4, released in March 2023, has 1,760 billion parameters with context windows of 8,192 and 32,768 tokens. The data generated by GPT-4 is often used to fine-tune other models. An example is Orca2, a derivative of LLaMa2 developed by Microsoft in 2023, which trains LLaMa2 base models on high-quality synthetic data produced by GPT-4.
 
 See the [LLM index](https://sapling.ai/llm/index?WT.mc_id=academic-105485-koreyst) for more model comparison
 
