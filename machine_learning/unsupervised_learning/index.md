@@ -70,4 +70,6 @@ PCA only allows dimensionality reduction based on principal components which are
 
 ## Cluster analysis
 
+* The *K-means algorithm* classifies $$n$$ points into $$k$$ clusters in a vector space, based on their distance to each other. It starts by randomly chosing the representant of each cluster-sometimes referred as *centroids*, and then iteratively assigning each of the **n** points to its closest centroid to obtain **k** clusters. The centroid of the latters will be updated as the barycenter of the cluster's points. The algorithm goes on until it converges. (when centroids remain the same)
 
+* The *K-medoids* follows essentially the same principle than *K-means*, the only difference is the definition of the centroids which are not defined as the barycenter of the cluster's points but an actual point of the cluster that minimises the average distance with its class neighbours.
