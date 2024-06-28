@@ -11,10 +11,9 @@ Here is a list of papers that give a good introduction to LLMs:
 - [An Image is Worth 16x16 Words](https://arxiv.org/pdf/2010.11929.pdf) from Dosovitskiy et al. (Google), 10-2020, ViT architecture (positional encoding added on patches)
 - [LlaMa 2: Open Foundation and Fine-Tuned Chat Models](https://arxiv.org/pdf/2307.09288.pdf) from Touvron et al. (FAIR), 07-2023, Helpfuness and safety alignment (RLHF)
 - [Training Compute-Optimal Large Language Models](https://arxiv.org/pdf/2203.15556.pdf) from Hoffmann et al. (DeepMind), 03-2022, Chinchilla paper
-- [Direct Preference Optimization: Your Language Model is Secretly a Reward Model](https://arxiv.org/pdf/2305.18290.pdf) from Stanford, 05-2023, different alignment algorithm (simpler than RLHF)
+- [DPO: Your Language Model is Secretly a Reward Model](https://arxiv.org/pdf/2305.18290.pdf) from Stanford, 05-2023, alignment algorithm simpler than RLHF (since it doesn't need to train a separate reward model)
 
-- [VOYAGER](https://arxiv.org/pdf/2305.16291.pdf): An Open-Ended Embodied Agent with Large Language Models  
-Minecraft agent stocking knowledge
+- [VOYAGER](https://arxiv.org/pdf/2305.16291.pdf): An Open-Ended Embodied Agent with Large Language Models. Minecraft agent stocking knowledge.
 
 To understand the novelty and power of transformers, one can read the following paper which shows some of the challenges using RNN architectures in NLP.
 
