@@ -41,7 +41,9 @@ Rather than maximizing variance, it might sound more plausible to look for the p
 
 Let $$(X_i)_{1\leq i\leq n}$$ be iid random variables in $$\mathbb{R}^d$$ and consider the matrix $$X\in\mathbb{R}^{n\times d}$$ such that the $$i$$-th row of $$X$$ is the observation $$X_i^T$$.
 
-We assume that data are preprocessed so that the columns of $$X$$ are centered. Let $$\Sigma_n$$ be the empirical covariance matrix: $$\Sigma_n = \frac{1}{n}\Sigma_{i=1}^nX_iX_i^T$$
+We assume that data are preprocessed so that the columns of $$X$$ are centered. Let $$\Sigma_n$$ be the empirical covariance matrix:
+
+$$\Sigma_n = \frac{1}{n}\Sigma_{i=1}^nX_iX_i^T$$
 
 We can reduce the dimensionality of the observations $$(X_i)$$ using a compression matrix $$W \in \mathbb{R}^{p\times d}$$ with $$p\leq d$$ so that for each $$1\leq i \leq n, WX_i$$ is a low dimensional representation of $$X_i$$.
 
@@ -57,9 +59,12 @@ For all $$U \in \mathbb{R}^{d \times p}$$ such that $$U^TU = I_p$$, we have:
 
 $$\sum_{i=1}^n \|X_i - UU^T X_i\|^2 = \sum_{i=1}^n \|X_i\|^2 - \operatorname{trace}(U^T X X^T U)$$.
 
-Therefore, solving the PCA problem boils down to computing $$U_{\star} \in \underset{U \in \mathbb{R}^{d \times p}, U^T U = I_p}{\operatorname{argmax}} \operatorname{trace}\left(U^T \Sigma_n U\right)$$.
+Therefore, solving the PCA problem boils down to computing
 
-Let $$v_1, ..., v_d$$ be orthonormal eigenvectors associated with the eigenvalues $$\lambda_1 \geq ... \geq \lambda_d$$ of $$\Sigma_n$$. Then a solution to the PCA problem is given by the matrix $$U_*$$ with columns $$v_1, ..., v_p$$. Here is the pseudo-code of the PCA algorithm:
+$$U_{\star} \in \underset{U \in \mathbb{R}^{d \times p}, U^T U = I_p}{\operatorname{argmax}} \operatorname{trace}\left(U^T \Sigma_n U\right)$$
+
+Let $$v_1, ..., v_d$$ be orthonormal eigenvectors associated with the eigenvalues $$\lambda_1 \geq ... \geq \lambda_d$$ of $$\Sigma_n$$. Then a solution to the PCA problem is given by the matrix $$U_*$$ with columns $$\lbrace v_1, ..., v_p \rbrace $$.
+Here is the pseudo-code of the PCA algorithm:
 
 1. Center $$X\in\mathbb{R}^{n\times d}$$
 2.  Compute the covariance matrix $$\Sigma_n$$, obtain its eigenvectors $$v_i \in \mathbb{R}^{d}$$ sorted by eigenvalues in decreasing order
@@ -70,6 +75,6 @@ PCA only allows dimensionality reduction based on principal components which are
 
 ## Cluster analysis
 
-* The *K-means algorithm* classifies $$n$$ points into $$k$$ clusters in a vector space, based on their distance to each other. It starts by randomly chosing the representant of each cluster-sometimes referred as *centroids*, and then iteratively assigning each of the **n** points to its closest centroid to obtain **k** clusters. The centroid of the latters will be updated as the barycenter of the cluster's points. The algorithm goes on until it converges. (when centroids remain the same)
+* The *K-means algorithm* classifies $$n$$ points into $$k$$ clusters in a vector space, based on their distance to each other. It starts by randomly chosing the representant of each cluster-sometimes referred as *centroids*, and then iteratively assigns each of the **n** points to its closest centroid to obtain **k** clusters. The centroid of the latters will be updated as the barycenter of the cluster's points. The algorithm goes on until it converges -which is when centroids remain the same between two consecutive iterations.
 
-* The *K-medoids* follows essentially the same principle than *K-means*, the only difference is the definition of the centroids which are not defined as the barycenter of the cluster's points but an actual point of the cluster that minimises the average distance with its class neighbours.
+* The *K-medoids* is almost the same as *K-means*, the only difference relies in the definition of the centroids. The representant of the clusters are not defined as the barycenter but as the point of the cluster that minimises the average distance with its class neighbours. Therefore, it corresponds to a datapoint which wouldn't be always the case with K-Means.
