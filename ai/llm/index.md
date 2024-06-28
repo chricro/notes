@@ -1,20 +1,20 @@
 ---
 layout: post
-title: Large Language Models
+title: Large Language Models (LLM)
 ---
 
-## Introduction to Large Language Models
+## Introduction to LLMs
 
 Here is a list of papers that give a good introduction to LLMs:
 
--[Attention is all you need](https://arxiv.org/pdf/1706.03762.pdf) from Vaswani et al. (Google) | 06-2017 | transformer architecture and self-attention mechanism
--[An Image is Worth 16x16 Words](https://arxiv.org/pdf/2010.11929.pdf) from Dosovitskiy et al. (Google) | 10-2020 | ViT architecture (positional encoding added on patches)
--[LlaMa 2: Open Foundation and Fine-Tuned Chat Models](https://arxiv.org/pdf/2307.09288.pdf) from Touvron et al. (FAIR) | 07-2023 | Helpfuness and safety alignment (RLHF)
--[Training Compute-Optimal Large Language Models](https://arxiv.org/pdf/2203.15556.pdf) from Hoffmann et al. (DeepMind) | 03-2022 | Chinchilla paper
--[Direct Preference Optimization: Your Language Model is Secretly a Reward Model](https://arxiv.org/pdf/2305.18290.pdf) from Stanford | 05-2023 | different alignment algorithm (simpler than RLHF)
+-[Attention is all you need](https://arxiv.org/pdf/1706.03762.pdf) from Vaswani et al. (Google), 06-2017, transformer architecture and self-attention mechanism
+-[An Image is Worth 16x16 Words](https://arxiv.org/pdf/2010.11929.pdf) from Dosovitskiy et al. (Google), 10-2020, ViT architecture (positional encoding added on patches)
+-[LlaMa 2: Open Foundation and Fine-Tuned Chat Models](https://arxiv.org/pdf/2307.09288.pdf) from Touvron et al. (FAIR), 07-2023, Helpfuness and safety alignment (RLHF)
+-[Training Compute-Optimal Large Language Models](https://arxiv.org/pdf/2203.15556.pdf) from Hoffmann et al. (DeepMind), 03-2022, Chinchilla paper
+-[Direct Preference Optimization: Your Language Model is Secretly a Reward Model](https://arxiv.org/pdf/2305.18290.pdf) from Stanford, 05-2023, different alignment algorithm (simpler than RLHF)
 
 - [VOYAGER](https://arxiv.org/pdf/2305.16291.pdf): An Open-Ended Embodied Agent with Large Language Models  
-Minecraft agent stocking knowledge -> how the knowledge is retrieved? simply cosine similarity? (01/12/2023)
+Minecraft agent stocking knowledge
 
 To understand the novelty and power of transformers, one can read the following paper which shows some of the challenges using RNN architectures in NLP.
 
