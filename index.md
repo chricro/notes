@@ -2,28 +2,27 @@
 layout: post
 title: Contents
 ---
-<span class="newthought">This website</span> is the collection of notes about diverse topics from statistics, machine learning, artificial intelligence but also finance {% include sidenote.html id="note-pgm" note="This is just an example of side notes" %}.
+<span class="newthought">This website</span> is the collection of notes about diverse topics from statistical learning, generatieve artificial intelligence and also finance {% include sidenote.html id="note-pgm" note="Statistical learning $$\approx$$ statistics + machine learning" %}.
 
 ## Statistical learning
 
-Statistical learning refers to a set of tools for modeling and understanding complex datasets. It is a recently developed area in statistics and blends with parallel developments in computer science and, in particular, machine learning. The field encompasses many methods such as the lasso and sparse regression, classification and regression trees, and boosting and support vector machines.
-With the explosion of “Big Data” problems, statistical learning has become a very hot field in many scientific areas as well as marketing, finance, and other business disciplines.
+*Statistical learning* involves a collection of techniques designed to analyze and interpret complex datasets. This emerging field within statistics integrates closely with advancements in computer science, especially machine learning. It includes a variety of methods like lasso and sparse regression, classification and regression trees, as well as boosting and support vector machines. The surge in "Big Data" challenges has significantly heightened the relevance of statistical learning across various scientific fields, in addition to financial sectors.
 
-Here is a combination of different elements that I learned from Machine Learning courses at Télécom SudParis and Imperial College London:
+Here is a combination of different elements I learned from Machine Learning courses at Télécom SudParis (2020-2022) and Imperial College London (2022-2023):
 
-- [Supervised learning](machine_learning/supervised_learning/): Generative approache (LDA/GDA, Naive Bayes) vs discriminant approach (logistic regression)
-- [Unsupervised learning](machine_learning/unsupervised_learning/): Principal Component Analysis (PCA), Kernel PCA
+- [Supervised learning](machine_learning/supervised_learning/): Generative approache (LDA/GDA, Naive Bayes) vs discriminant approach (logistic regression).
+- [Unsupervised learning](machine_learning/unsupervised_learning/): Principal Component Analysis (PCA), Kernel PCA.
 
 ## Generative AI
 
-Here are some self-taught notes about Generative AI I've written during my full-time role in a startup environment.
+Here are some notes on Generative AI that I wrote while working full-time at a startup.
 
 - [An overview of large language models](ai/llm/): Pretraining, instruction fine-tuning, alignment techniques. Frameworks to deploy LLMs efficiently, optimization of inference. How to improve reasoning. Vision transformers.
 - [Useful resources](ai/resources/): Benchmarks and leaderboards, interesting blogs and github resources.
 
 ## Finance
 
-As someone interested in applying my statistical and machine learning knowledge on concrete problems and real-world scenarios, I find finance to be a passioning field for research and exploration.
+As someone eager to apply my statistical and machine learning knowledge to practical problems and real-world scenarios, I find finance to be a fascinating field for research and exploration.
 
 1. [Book Excerpts](finance/books/): Sentences from books that I find interesting and educational.
 
