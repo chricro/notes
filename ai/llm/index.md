@@ -7,11 +7,11 @@ title: Large Language Models (LLM)
 
 Here is a list of papers that give a good introduction to LLMs:
 
-- [Attention is all you need](https://arxiv.org/pdf/1706.03762.pdf) from Vaswani et al. (Google), 06-2017, transformer architecture and self-attention mechanism
-- [An Image is Worth 16x16 Words](https://arxiv.org/pdf/2010.11929.pdf) from Dosovitskiy et al. (Google), 10-2020, ViT architecture (positional encoding added on patches)
+- [Attention is all you need](https://arxiv.org/pdf/1706.03762.pdf) from Vaswani et al. (Google), 06-2017, transformer architecture and self-attention mechanism. This blog presents clearly the architecture: https://jalammar.github.io/illustrated-transformer/.
+- [An Image is Worth 16x16 Words](https://arxiv.org/pdf/2010.11929.pdf) from Dosovitskiy et al. (Google), 10-2020, ViT architecture (positional encoding added on patches). This paper applies the logic of transformers to images.
 - [LlaMa 2: Open Foundation and Fine-Tuned Chat Models](https://arxiv.org/pdf/2307.09288.pdf) from Touvron et al. (FAIR), 07-2023, Helpfuness and safety alignment (RLHF)
-- [Training Compute-Optimal Large Language Models](https://arxiv.org/pdf/2203.15556.pdf) from Hoffmann et al. (DeepMind), 03-2022, Chinchilla paper
-- [DPO: Your Language Model is Secretly a Reward Model](https://arxiv.org/pdf/2305.18290.pdf) from Stanford, 05-2023, alignment algorithm simpler than RLHF (since it doesn't need to train a separate reward model)
+- [Training Compute-Optimal Large Language Models](https://arxiv.org/pdf/2203.15556.pdf) from Hoffmann et al. (DeepMind), 03-2022, Chinchilla paper.
+- [DPO: Your Language Model is Secretly a Reward Model](https://arxiv.org/pdf/2305.18290.pdf) from Stanford, 05-2023. This paper presents an original alignment algorithm simpler than RLHF since it doesn't need to train a separate reward model. It is now very popular and almost systematically used on top of fine-tuning methods to align the model to *chosen responses*, simply by giving a pair dataset of chosen and rejected responses for a given input prompt.
 
 - [VOYAGER](https://arxiv.org/pdf/2305.16291.pdf): An Open-Ended Embodied Agent with Large Language Models. Minecraft agent stocking knowledge.
 
@@ -81,12 +81,15 @@ Reasoning and planning approaches:
 - [STaR: Bootstrapping Reasoning With Reasoning](https://arxiv.org/pdf/2203.14465.pdf)
 - [Quiet-STaR: Language Models Can Teach Themselves to Think Before Speaking](https://arxiv.org/pdf/2403.09629.pdf)
 
-To understand the transformers capabilities, one can perform *prompt-engineering*:
+To understand the transformers capabilities, one can perform *prompt-engineering*. An interesting reading on this topic: [Asimov - The Original Prompt Engineer](https://lojones.github.io/2023/04/30/asimov-prompt-engineer.html)
 
-- https://www.promptingguide.ai/introduction/tips
-- https://lojones.github.io/2023/04/30/asimov-prompt-engineer.html (Asimov)
+An important point is the context window of models, which helps to maintain large conversations and every important element in context. Some solutions that come to mind are using vector databases and cosine-similarity metrics, or trained LLMs, to retrieve information.
 
-An important point is the *context-window* of models to keep in context large conversations and every important element:
+Since the shapes of all learnable matrix weights are independent of the input token length **n**, we can use an LLM trained on a 2K context length with any size input. However, results won't necessarily be meaningful. That's why a common procedure is to train the model on a 2K context and then fine-tune it on a larger context.
+
+This approach is not directly feasible with the original transformer architecture due to the positional sinusoidal encoding, which lacks "extrapolation" ability. Instead, we can use another positional function, such as the Attention with Linear Biases ([ALiBi](https://arxiv.org/pdf/2108.12409)).
+
+If we allow generating sequences of any size, not all tokens in the context of size 100K are relevant to each other. One way to reduce the number of computations is to consider only some tokens when calculating the attention scores. The goal of adding sparsity is to make the computation linear to **n**, not quadratic. This is called sparse attention.
 
 - https://blog.gopenai.com/how-to-speed-up-llms-and-use-100k-context-window-all-tricks-in-one-place-ffd40577b4c
 
@@ -125,9 +128,3 @@ For comparison, GPT-4, released in March 2023, has 1,760 billion parameters with
 See the [LLM index](https://sapling.ai/llm/index?WT.mc_id=academic-105485-koreyst) for more model comparison
 
 Chinchilla law: number of tokens during training (dataset size including epochs) should be ~20x the number of parameters of the model
-
-
-# Random ML stuff
-
-Recall = TP / (TP + FN) : true predictions compared to the positive  
-Precision = TP / (TP + FP) : true predictions compared to the predicted positive
