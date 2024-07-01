@@ -14,6 +14,23 @@ P/E: the price-to-earnings ratio is the proportion of a company's share price to
 * p.16: Many quants reserve the right to reduce the overall size of the portfolio (and therefore leverage) if, in their discretion, the markets appear too risky. For example, after the attacks of September 11, 2001, many quants reduced their leverage in the wake of a massive event that would have unknowable repercussions on capital markets. Once things seemed to be operating more normally in the markets, the quants increased their leverage back to normal levels.
 * p.16: If both the qeustions of *what positions* to own and *how much* of each to own are usually answered systematically, that's a quant. If either one is answered by a human as standard operating procedure, that's not a quant.
 * p.17: The trading system has three modules-an alpha model, a risk model, and a transaction cost model-which fed into a portfolio construction model, which in turn interacts with the exectuion model.
+* p.25: *Theoretical scientists* try to make sense of the world around them by hypothesizing why it is the way it is. (...) *Empirical scientists* believe that enough observations of the world can allow them to predict future patterns of behavior, even if there is no hypothesis to rationalize the behavior in an intuitive way.
+* p.26: Most quants you will come across are theory driven. (...) What theory-driven quants do can be relatively easily fit into one of six classes of phenomena: trend, reversion, technical sentiment, value/yield, growth, and quality.
+* p.31: when discretionary traders implement mean reversion strategies, they are typically known as *contrarians*.
+* p.32: Stat arb ushered in an important change in worldview, one that focused on whether Company A was over- or undervalued *relative* to Company B rather than Company A was simply cheap or expensive *in itself*.
+* p.32: Trends tend to occur over longer time horizons, whereas reversions tend to happen over shorter-term time horizons.
+* p.34: If puts have higher volumes relative to calls than they normally do, it might be an indicator that investors are worried about a downturn. (...) A second example of options-based sentiment in equities utilizes the implied volatilities of puts versus calls.
+* p.35: Rather, combining betas with historical data about tht ebook-to-price ratio and the market capitalization of the stocks was a better determinant of future returns.
+* p.37: When done on a relative basis, that is, buying the undervalued security and selling the overvalued one against it, this strategy is also known as a *carry trade*. The spread between the yield received and the yield paid is the *carry*. If nothing else happens, a carry trade offers an investor a baseline rate of return, which acts as the margin of safety Graham and Dodd were talking about.
+  
+To cover: index fund, P/E ratio, book-to-price ratio
 
-To cover: index fund, 
+Company Financial Transactions: Only transactions that the company itself engages in, such as issuing new shares, repurchasing shares, or acquiring assets, affect the book value.
+
+Price-to-Book Ratio (P/B): It is calculated by dividing the market price per share by the book value per share.
+
+Interpretation
+P/B < 1: Indicates that the stock is potentially undervalued or that the company is performing poorly. It might also suggest that the market does not believe the company’s assets are worth the value on its balance sheet.
+P/B > 1: Indicates that the stock is potentially overvalued or that the company is performing well. It might also suggest that investors are willing to pay more than the book value due to expectations of future growth, strong earnings, or other favorable factors.
+P/B = 1: Indicates that the market value is equal to the book value.
 
