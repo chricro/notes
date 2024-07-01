@@ -7,13 +7,11 @@ title: Large Language Models (LLM)
 
 Here is a list of papers that give a good introduction to LLMs:
 
-- [Attention is all you need](https://arxiv.org/pdf/1706.03762.pdf) from Vaswani et al. (Google), 06-2017, transformer architecture and self-attention mechanism. This blog presents clearly the architecture: https://jalammar.github.io/illustrated-transformer/.
-- [An Image is Worth 16x16 Words](https://arxiv.org/pdf/2010.11929.pdf) from Dosovitskiy et al. (Google), 10-2020, ViT architecture (positional encoding added on patches). This paper applies the logic of transformers to images.
+- [Attention is all you need](https://arxiv.org/pdf/1706.03762.pdf) is the must-read paper from Vaswani et al. (Google), published in 06-2017. It presents the transformer architecture and the *self-attention mechanism*. This [blog](https://jalammar.github.io/illustrated-transformer/) presents a nice overview of the architecture.
+- [An Image is Worth 16x16 Words](https://arxiv.org/pdf/2010.11929.pdf) from Dosovitskiy et al. (Google), 10-2020, applies the logic of transformers to images by enabling positional encoding on *patches*. These models are called *vision transformers* (ViT).
 - [LlaMa 2: Open Foundation and Fine-Tuned Chat Models](https://arxiv.org/pdf/2307.09288.pdf) from Touvron et al. (FAIR), 07-2023, Helpfuness and safety alignment (RLHF)
-- [Training Compute-Optimal Large Language Models](https://arxiv.org/pdf/2203.15556.pdf) from Hoffmann et al. (DeepMind), 03-2022, Chinchilla paper.
-- [DPO: Your Language Model is Secretly a Reward Model](https://arxiv.org/pdf/2305.18290.pdf) from Stanford, 05-2023. This paper presents an original alignment algorithm simpler than RLHF since it doesn't need to train a separate reward model. It is now very popular and almost systematically used on top of fine-tuning methods to align the model to *chosen responses*, simply by giving a pair dataset of chosen and rejected responses for a given input prompt.
-
-- [VOYAGER](https://arxiv.org/pdf/2305.16291.pdf): An Open-Ended Embodied Agent with Large Language Models. Minecraft agent stocking knowledge.
+- [Training Compute-Optimal Large Language Models](https://arxiv.org/pdf/2203.15556.pdf) from Hoffmann et al. (DeepMind), 03-2022, presents the *Chinchilla law*, which indicates some training guidelines for LLM (how many data do we need given the size of the model?, etc.)
+- [DPO: Your Language Model is Secretly a Reward Model](https://arxiv.org/pdf/2305.18290.pdf) from Stanford, 05-2023, presents an original alignment algorithm simpler than RLHF since it doesn't need to train a separate reward model. It is now very popular and almost systematically used on top of fine-tuning methods to align the model to *chosen responses*, simply by giving a pair dataset of chosen and rejected responses for a given input prompt.
 
 To understand the novelty and power of transformers, one can read the following paper which shows some of the challenges using RNN architectures in NLP.
 
@@ -116,6 +114,7 @@ We often find parallel between vision models and software agents, since vision o
 - LLM solving computer tasks: https://arxiv.org/pdf/2303.17491.pdf
 
 Other techniques try to combine LLMs and browser softwares, such as GPT4-V Act, which uses vision with CSSOM (CSS version of DOM) https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect , https://github.com/ddupont808/GPT-4V-Act/issues/4
+- [VOYAGER](https://arxiv.org/pdf/2305.16291.pdf): An Open-Ended Embodied Agent with Large Language Models. Minecraft agent stocking knowledge.
 
 A nice summary of Vision-Language models is provided in a [paper](https://arxiv.org/pdf/2405.17247) from Meta (24/05/2024)
 
