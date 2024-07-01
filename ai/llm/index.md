@@ -94,24 +94,23 @@ If we allow generating sequences of any size, not all tokens in the context of s
 ## Transformers aspects to improve:
 
 Positional encoding introduced by Transformers (2017): learned absolute positional encoding with sine and cosine positional functions.
-Other techniques involve learned relative positional encoding. Rotary Position Embedding (RoPE): https://blog.eleuther.ai/yarn/  
-[Shikra](https://arxiv.org/pdf/2306.15195.pdf): 6.2 Location tokens or just numbers?
+Other techniques involve learned relative positional encoding.
+- Rotary Position Embedding (RoPE): [extending the RoPE](https://blog.eleuther.ai/yarn/)
+- [Shikra](https://arxiv.org/pdf/2306.15195.pdf): 6.2 Location tokens or just numbers?
 
-Flash-decoding for long-context inference: https://crfm.stanford.edu/2023/10/12/flashdecoding.html  
-Flash attention brings down the computation time of attention from quadratic to linear (https://arxiv.org/pdf/2205.14135.pdf), explained here: https://shreyansh26.github.io/post/2023-03-26_flash-attention/
+- [Flash-decoding](https://crfm.stanford.edu/2023/10/12/flashdecoding.html) for long-context inference
+- [Flash attention](https://arxiv.org/pdf/2205.14135.pdf) brings down the computation time of attention from quadratic to linear, explained [here](https://shreyansh26.github.io/post/2023-03-26_flash-attention/)
 
 ## Multi-modality
 
-Some insights on GPT4-V model on image processing is described in this: https://platform.openai.com/docs/guides/vision
-
-Some of the interesting OSS ViTs (in late 2023) are CogVLM, Adept Fuyu, MiniGPT, BLIP-2, LlaVa-1.5.
+Some insights on GPT4-V model on image processing is described in this [link](https://platform.openai.com/docs/guides/vision). Some of the interesting OSS ViTs (in late 2023) are CogVLM, Adept Fuyu, MiniGPT, BLIP-2, LlaVa-1.5.
 
 We often find parallel between vision models and software agents, since vision on desktop can be something really helpful.
 
 - [CogAgent](https://arxiv.org/pdf/2312.08914.pdf) is trained on desktop images.
 - [Mind2Web](https://arxiv.org/pdf/2306.06070.pdf) is a WebAgent.
-- Retrieve information: https://arxiv.org/pdf/2005.11401.pdf
-- LLM solving computer tasks: https://arxiv.org/pdf/2303.17491.pdf
+- Retrieve information: [Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks](https://arxiv.org/pdf/2005.11401.pdf)
+- LLM solving computer tasks: [LLM can solve Computer Tasks](https://arxiv.org/pdf/2303.17491.pdf)
 
 Other techniques try to combine LLMs and browser softwares, such as GPT4-V Act, which uses vision with CSSOM (CSS version of DOM) https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect , https://github.com/ddupont808/GPT-4V-Act/issues/4
 - [VOYAGER](https://arxiv.org/pdf/2305.16291.pdf): An Open-Ended Embodied Agent with Large Language Models. Minecraft agent stocking knowledge.
