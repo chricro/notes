@@ -5,8 +5,6 @@ title: Book thoughts
 
 ## Inside the Black Box: A Simple Guide to Quantitative and High-Frequency Trading, 2nd Edition
 
-P/E: the price-to-earnings ratio is the proportion of a company's share price to its earnings per share.
-
 * p.7: Quants typically make markets more efficient for other participants by providing liquidity when other traders' needs cause a temporary imbalance in the supply and demande for a security. (...) Riskless profit, or arbitrage, is not the only-or even primary- way in which quants improve efficiency. The main inefficiencies quants eliminate (and, thereby, profit from) are not absolute and unassailable,  but rather are probabilistic and require risk taking. (example: statistical arbitrage)
 * p.10: Discretionary investors often find it very difficult to realize losses, whereas they are quick to realize gains. This is a well-documented behavioral bias known as the disposition effect.
 * p.13: One Washington Post article: "A quant fund is a hedge fund that relies on complex and sophisticated mathematical algorithms to search for anomalies and non-obvious patterns in the markets".
@@ -22,15 +20,18 @@ P/E: the price-to-earnings ratio is the proportion of a company's share price to
 * p.34: If puts have higher volumes relative to calls than they normally do, it might be an indicator that investors are worried about a downturn. (...) A second example of options-based sentiment in equities utilizes the implied volatilities of puts versus calls.
 * p.35: Rather, combining betas with historical data about tht ebook-to-price ratio and the market capitalization of the stocks was a better determinant of future returns.
 * p.37: When done on a relative basis, that is, buying the undervalued security and selling the overvalued one against it, this strategy is also known as a *carry trade*. The spread between the yield received and the yield paid is the *carry*. If nothing else happens, a carry trade offers an investor a baseline rate of return, which acts as the margin of safety Graham and Dodd were talking about.
-  
-To cover: index fund, P/E ratio, book-to-price ratio
+
+
+## From my readings, here are some areas/notions I need to explore:
+
+* index fund
+* P/E ratio: the price-to-earnings ratio is the proportion of a company's share price to its earnings per share.
+* book-to-price ratio: calculated by dividing the market price per share by the book value per share.
 
 Company Financial Transactions: Only transactions that the company itself engages in, such as issuing new shares, repurchasing shares, or acquiring assets, affect the book value.
 
-Price-to-Book Ratio (P/B): It is calculated by dividing the market price per share by the book value per share.
-
 Interpretation
-P/B < 1: Indicates that the stock is potentially undervalued or that the company is performing poorly. It might also suggest that the market does not believe the company’s assets are worth the value on its balance sheet.
-P/B > 1: Indicates that the stock is potentially overvalued or that the company is performing well. It might also suggest that investors are willing to pay more than the book value due to expectations of future growth, strong earnings, or other favorable factors.
-P/B = 1: Indicates that the market value is equal to the book value.
+- P/B < 1: Indicates that the stock is potentially undervalued or that the company is performing poorly. It might also suggest that the market does not believe the company’s assets are worth the value on its balance sheet.
+- P/B > 1: Indicates that the stock is potentially overvalued or that the company is performing well. It might also suggest that investors are willing to pay more than the book value due to expectations of future growth, strong earnings, or other favorable factors.
+- P/B = 1: Indicates that the market value is equal to the book value.
 
