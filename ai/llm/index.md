@@ -29,9 +29,9 @@ Instead of having numerous experts (which are essentially FFN layers) during tra
 
 * Phixtral MoE (Maxime Labonne): [mergekit](https://github.com/cg123/mergekit/tree/mixtral)
 * [MoE for clowns](https://goddard.blog/posts/clown-moe/)
-* Huggingface collection of [Model merging]([https://huggingface-co.translate.goog/collections/osanseviero/model-merging-65097893623330a3a51ead66?_x_tr_sl=en&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=sc](https://huggingface.co/collections/osanseviero/model-merging-65097893623330a3a51ead66))
+* Huggingface collection of [Model merging](https://huggingface.co/collections/osanseviero/model-merging-65097893623330a3a51ead66)
 * Linear and [Task Arithmetic](https://arxiv.org/pdf/2212.04089.pdf) merging
-* Two MoE papers: https://arxiv.org/pdf/1701.06538.pdf and https://arxiv.org/pdf/1312.4314.pdf
+* Two MoE papers: [first](https://arxiv.org/pdf/1701.06538.pdf) and [second](https://arxiv.org/pdf/1312.4314.pdf)
 * [gdoc to read](https://docs.google.com/document/d/1_vOftBnrk9NRk5h10UqrfJ5CDih9KBKL61yvrZtVWPE/edit?pli=1)
 
 
