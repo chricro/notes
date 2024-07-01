@@ -2,7 +2,7 @@
 layout: post
 title: Contents
 ---
-This website, currently under construction, is an organised compilation of notes on a variety of subjects, including statistical learning, generative artificial intelligence, and finance. {% include sidenote.html id="note-pgm" note="Statistical learning $$\approx$$ statistics + machine learning" %}.
+This website, currently under construction, is an organised compilation of notes on a variety of subjects, including statistical learning {% include sidenote.html id="note-pgm" note="Statistical learning $$\approx$$ statistics + machine learning" %}, generative artificial intelligence, and finance.
 
 ## Statistical learning
 
