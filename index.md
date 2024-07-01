@@ -2,7 +2,7 @@
 layout: post
 title: Contents
 ---
-<span class="newthought">This website</span> is the collection of notes about diverse topics from statistical learning, generatieve artificial intelligence and also finance {% include sidenote.html id="note-pgm" note="Statistical learning $$\approx$$ statistics + machine learning" %}.
+This website, currently under construction, is an organised compilation of notes on a variety of subjects, including statistical learning, generative artificial intelligence, and finance. {% include sidenote.html id="note-pgm" note="Statistical learning $$\approx$$ statistics + machine learning" %}.
 
 ## Statistical learning
 
@@ -12,6 +12,11 @@ Here is a combination of different elements I learned from Machine Learning cour
 
 - [Supervised learning](machine_learning/supervised_learning/): Generative approache (LDA/GDA, Naive Bayes) vs discriminant approach (logistic regression).
 - [Unsupervised learning](machine_learning/unsupervised_learning/): Principal Component Analysis (PCA), Kernel PCA.
+
+## Statistics
+
+- [Inference](inference/sampling/):
+- [Variational inference](inference/variational/):
 
 ## Generative AI
 
