@@ -83,9 +83,9 @@ PCA only allows dimensionality reduction based on principal components which are
 
 We consider statistical models where $$Y$$ are *observed data* and $$X$$ are *latent* (or *missing*) *data*. We assume that there exists $$\theta \in \mathbb{R}^m$$ and a probability density $$(x,y) \mapsto p_{\theta}(x,y)$$.
 
-As we don’t measure $$X$$, we cannot maximize $$\theta \mapsto \log p_{\theta}(X,Y)$$. We only have access to $$Y$$ and thus $$\theta \mapsto \log p_{\theta}(Y)$$. Suppose the completed data has a density $$f$$.
+As we don’t measure $$X$$, we cannot maximize $$\theta \mapsto \log p_{\theta}(X,Y)$$. We only have access to $$Y$$ and thus $$\theta \mapsto \log p_{\theta}(Y)$$.
 
-The main difficulty is we cannot compute $$p_{\theta}(y) = \int p_{\theta}(x,y)dx$$. The EM algorithm instead computes an auxiliary quantity, generating a sequence of estimators $$(\theta^{(p)})_{p \geq 0}$$ with:
+The main difficulty is we cannot compute $$p_{\theta}(y) = \int p_{\theta}(x,y)dx$$. The EM algorithm instead computes an auxiliary quantity, generating a sequence of estimators $$(\theta^{(p)})_{p \geq 0}$$ as follows:
 
 1. $$\theta^{(0)}$$: randomly initialized.
 2. $$\forall k \geq 0$$: Compute
