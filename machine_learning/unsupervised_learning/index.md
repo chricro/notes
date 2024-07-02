@@ -89,7 +89,7 @@ The main difficulty is we cannot compute $$p_{\theta}(y) = \int p_{\theta}(x,y)d
 
 1. $$\theta^{(0)}$$: randomly initialized.
 2. $$\forall k \geq 0$$: Compute
-   $$Q(\theta; \theta^{(k)}) = E_{Q^{(k)}}[\log p_{\theta}(X,Y) \mid Y] = \int \log p_{\theta}(x,Y) p_{\theta^{(k)}}(x \mid Y) \, dx$$
+   $$Q(\theta; \theta^{(k)}) = E_{\theta^{(k)}}[\log p_{\theta}(X,Y) \mid Y] = \int \log p_{\theta}(x,Y) p_{\theta^{(k)}}(x \mid Y) \, dx$$
    *(E-step)*.
 3. Define $$\theta^{(k+1)} \in \operatorname{Argmax}_{\theta \in \mathbb{R}^m} Q(\theta; \theta^{(k)})$$ *(M-step)*.
 
@@ -103,9 +103,12 @@ $$\log p_{\theta}(Y) \geq \log p_{\theta^{(k)}}(Y) = Q(\theta, \theta^{(k)}) - Q
 
 But
 
-$$E_{\theta^{(k)}}[\log p_{\theta}(X|Y)|Y] - E_{\theta^{(k)}}[\log p_{\theta^{(k)}}(X|Y)|Y] = E_{\theta^{(k)}}\left[\log \frac{p_{\theta}(X|Y)}{p_{\theta^{(k)}}(X|Y)}\right]$$
+$$E_{\theta^{(k)}}[\log p_{\theta}(X|Y)|Y] - E_{\theta^{(k)}}[\log p_{\theta^{(k)}}(X|Y)|Y] = E_{\theta^{(k)}}\left[\log \frac{p_{\theta}(X|Y)}{p_{\theta^{(k)}}(X|Y)} | Y \right] := KL \left(p_{\theta^{(k)}(\cdot |Y) || p_{\theta}(\cdot |Y)\right)}$$
 
-is positive as a Kullback-Leibler divergence. In addition, by definition:
+is positive as a Kullback-Leibler divergence. This can be shown with Jensen's inequality, since $$-\log$$ is convex, we have:
+$$E_{\theta^{(k)}}\left[-\log \frac{p_{\theta^{(k)}}(X|Y)}{p_{\theta}(X|Y)}\right] \geq -\log E_{\theta^{(k)}}\left[\frac{p_{\theta^{(k)}}(X|Y)}{p_{\theta}(X|Y)}\right] = 0$$
+
+In addition, by definition:
 
 $$Q(\theta^{(k+1)}, \theta^{(k)}) - Q(\theta^{(k)}, \theta^{(k)}) \geq 0$$,
 
