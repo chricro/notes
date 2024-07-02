@@ -83,11 +83,12 @@ PCA only allows dimensionality reduction based on principal components which are
 
 We consider statistical models where **Y** are *observed data* and **X** are *latent* (or *missing*) *data*. We assume that there exists **\theta \in \mathbb{R}^m** and a probability density **(x,y) \mapsto p_{\theta}(x,y)**.
 
-As we don't measure **X**, we cannot maximize **\theta \mapsto \log p_{\theta}(X,Y)**. We only have access to **Y** and thus **\theta \mapsto \log p_{\theta}(Y)**. Suppose the completed data has a density **f**.
+As we don’t measure **X**, we cannot maximize **\theta \mapsto \log p_{\theta}(X,Y)**. We only have access to **Y** and thus **\theta \mapsto \log p_{\theta}(Y)**. Suppose the completed data has a density **f**.
 
 The main difficulty is we cannot compute **p_{\theta}(y) = \int p_{\theta}(x,y)dx**. The EM algorithm instead computes an auxiliary quantity, generating a sequence of estimators **(\theta^{(p)})_{p \geq 0}** with:
+
 - **\theta^{(0)}** randomly initialized
-- **\forall k \geq 0**: compute **Q(\theta; \theta^{(k)}) = E_{Q^{(k)}}[\log p_{\theta}(X,Y)|Y] = \int \log p_{\theta}(x,Y)p_{\theta^{(k)}}(x|Y)dx** (E-step)
+- **\forall k \geq 0**: compute **Q(\theta; \theta^{(k)}) = E_{Q^{(k)}}[\log p_{\theta}(X,Y)|Y] = \int \log p_{\theta}(x,Y) p_{\theta^{(k)}}(x|Y)dx** (E-step)
 - define **\theta^{(k+1)} \in \operatorname{Argmax}_{\theta \in \mathbb{R}^m} Q(\theta; \theta^{(k)})** (M-step)
 
 The EM algorithm always increases the likelihood, that is **\log p_{\theta^{(k+1)}}(Y) \geq \log p_{\theta^{(k)}}(Y)**. Indeed, we have:
@@ -96,7 +97,7 @@ The EM algorithm always increases the likelihood, that is **\log p_{\theta^{(k+1
 
 Thus,
 
-**\log p_{\theta}(Y) \geq \log p_{\theta^{(k)}}(Y) = Q(\theta,\theta^{(k)}) - Q(\theta^{(k)},\theta^{(k)}) + E_{\theta^{(k)}}[\log p_{\theta}(X|Y)|Y] - E_{\theta^{(k)}}[\log p_{\theta^{(k)}}(X|Y)|Y]**
+**\log p_{\theta}(Y) \geq \log p_{\theta^{(k)}}(Y) = Q(\theta, \theta^{(k)}) - Q(\theta^{(k)}, \theta^{(k)}) + E_{\theta^{(k)}}[\log p_{\theta}(X|Y)|Y] - E_{\theta^{(k)}}[\log p_{\theta^{(k)}}(X|Y)|Y]**
 
 But
 
@@ -107,5 +108,3 @@ is positive as a Kullback-Leibler divergence. In addition, by definition:
 **Q(\theta^{(k+1)}, \theta^{(k)}) - Q(\theta^{(k)}, \theta^{(k)}) \geq 0**,
 
 which concludes the proof.
-
-test
