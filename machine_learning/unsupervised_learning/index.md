@@ -78,3 +78,24 @@ PCA only allows dimensionality reduction based on principal components which are
 * The *K-means algorithm* classifies $$n$$ points into $$k$$ clusters in a vector space, based on their distance to each other. It starts by randomly chosing the representant of each cluster-sometimes referred as *centroids*, and then iteratively assigns each of the **n** points to its closest centroid to obtain **k** clusters. The centroid of the latters will be updated as the barycenter of the cluster's points. The algorithm goes on until it converges -which is when centroids remain the same between two consecutive iterations.
 
 * The *K-medoids* is almost the same as *K-means*, the only difference relies in the definition of the centroids. The representant of the clusters are not defined as the barycenter but as the point of the cluster that minimises the average distance with its class neighbours. Therefore, it corresponds to a datapoint which wouldn't be always the case with K-Means.
+
+## Expectation-maximization algorithm
+
+We consider statistical models where **Y** are *observed data* and **X** are *latent* (or *missing*) *data*. We assume that there exists **\theta \in \mathbb{R}^m** and a probability density **(x,y) \mapsto p_{\theta}(x,y)**.
+
+As we don't measure **X**, we cannot maximize **\theta \mapsto \log p_{\theta}(X,Y)**. We only have access to **Y** and thus **\theta \mapsto \log p_{\theta}(Y). Suppose the completed data has a density **f**
+
+The main difficulty is we cannot compute **p_{\theta}(y) = \int p_{\theta}(x,y)dx**. The EM algorithm instead computes an auxiliary quantity, generating a sequence of estimators **(\theta^{(p)})_{p\geq 0}** with:
+- **\theta^{(0)}** randomly initialized
+- **\forall k \geq 0**: compute **Q(\theta; \theta^{(k)}) = E_{Q^{(k)}}[\log p_{\theta}(X,Y)|Y] = \int \log p_{\theta}(x,Y)p_{\theta^{(k)}}(x|Y)dx** (E-step)
+- define **\theta^{(k+1)} \in \operatorname{Argmax}_{\theta \in \mathbb{R}^m} Q(\theta; \theta^{(k)}**
+
+The EM algorithm always increases the likelihood:, that is **\log p_{\theta^{(k+1)}}(y) \geq \log p_{\theta^{(k)}(y)**.
+Indeed, we have:
+
+**\log p_{\theta}(Y) = Q(\theta, \theta^{(k)}) - E_{\theta^{(k)}}[\log p_{\theta}(X|Y)|Y]**
+Thus,
+**\log p_{\theta}(y) \geq \log p_{\theta^{(k)}(y) = Q(\theta,\theta^{(k)})-(\theta^{(k)},\theta^{(k)})+E_{\theta^{(k)}}[\log p_{\theta}(X|Y)|Y]-E_{\theta^{(k)}}[\log p_{\theta^{(k)}}(X|Y)|Y]**
+But
+**E_{\theta^{(k)}}[\log p_{\theta}(X|Y)|Y]-E_{\theta^{(k)}}[\log p_{\theta^(k)}(X|Y)|Y] = E_{\theta^{(k)}}[\log \frac{p_{\theta}(X|Y)}{p_{\theta^{(k)}}|Y}]** is positive as a Kullback divergence.
+In addition, by definition: **Q(\theta^{(k+1)}, \theta^{(k)}) - Q(\theta^{(k)}, \theta^{(k)}) \leq 0**, which concludes the proof.
