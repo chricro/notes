@@ -11,7 +11,7 @@ This website, currently under construction, is an organised compilation of notes
 Here is a combination of different elements I learned from Machine Learning courses at Télécom SudParis (2020-2022) and Imperial College London (2022-2023):
 
 - [Supervised learning](machine_learning/supervised_learning/): Generative approache (LDA/GDA, Naive Bayes) vs discriminant approach (logistic regression).
-- [Unsupervised learning](machine_learning/unsupervised_learning/): Principal Component Analysis (PCA), Kernel PCA.
+- [Unsupervised learning](machine_learning/unsupervised_learning/): Dimension reduction (PCA, Kernel PCA). Unsupervised clustering (K-means, K-medoids). Latent data (EM algorithm).
 
 ## Statistics
 
