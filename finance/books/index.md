@@ -3,6 +3,8 @@ layout: post
 title: Book thoughts
 ---
 
+{% include marginfigure.html id="mc" url="assets/img/black_box.jpg" description="Inside the Black Box: A Simple Guide to Quantitative and High-Frequency Trading, 2nd Edition" %} 
+
 ## Inside the Black Box: A Simple Guide to Quantitative and High-Frequency Trading, 2nd Edition
 
 * p.7: Quants typically make markets more efficient for other participants by providing liquidity when other traders' needs cause a temporary imbalance in the supply and demande for a security. (...) Riskless profit, or arbitrage, is not the only-or even primary- way in which quants improve efficiency. The main inefficiencies quants eliminate (and, thereby, profit from) are not absolute and unassailable,  but rather are probabilistic and require risk taking. (example: statistical arbitrage)
