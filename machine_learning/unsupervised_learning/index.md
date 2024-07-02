@@ -87,9 +87,12 @@ As we don’t measure $$X$$, we cannot maximize $$\theta \mapsto \log p_{\theta}
 
 The main difficulty is we cannot compute $$p_{\theta}(y) = \int p_{\theta}(x,y)dx$$. The EM algorithm instead computes an auxiliary quantity, generating a sequence of estimators $$(\theta^{(p)})_{p \geq 0}$$ with:
 
-- $$\theta^{(0)}$$ randomly initialized
-- $$\forall k \geq 0$$: compute $$Q(\theta; \theta^{(k)}) = E_{Q^{(k)}}[\log p_{\theta}(X,Y)|Y] = \int \log p_{\theta}(x,Y) p_{\theta^{(k)}}(x|Y)dx$$ (E-step)
-- define $$\theta^{(k+1)} \in \operatorname{Argmax}_{\theta \in \mathbb{R}^m} Q(\theta; \theta^{(k)})$$ (M-step)
+1. $$\(\theta^{(0)}\)$$: randomly initialized.
+2. $$\(\forall k \geq 0\)$$: Compute
+   $$Q(\theta; \theta^{(k)}) = E_{Q^{(k)}}[\log p_{\theta}(X,Y) \mid Y] = \int \log p_{\theta}(x,Y) p_{\theta^{(k)}}(x \mid Y) \, dx$$
+   (E-step).
+3. Define $$\(\theta^{(k+1)} \in \operatorname{Argmax}_{\theta \in \mathbb{R}^m} Q(\theta; \theta^{(k)})\)$$ (M-step).
+
 
 The EM algorithm always increases the likelihood, that is $$\log p_{\theta^{(k+1)}}(Y) \geq \log p_{\theta^{(k)}}(Y)$$. Indeed, we have:
 
