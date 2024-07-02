@@ -99,17 +99,17 @@ $$\log p_{\theta}(Y) = Q(\theta, \theta^{(k)}) - E_{\theta^{(k)}}[\log p_{\theta
 
 Thus,
 
-$$\log p_{\theta}(Y) \geq \log p_{\theta^{(k)}}(Y) = Q(\theta, \theta^{(k)}) - Q(\theta^{(k)}, \theta^{(k)}) + E_{\theta^{(k)}}[\log p_{\theta}(X|Y)|Y] - E_{\theta^{(k)}}[\log p_{\theta^{(k)}}(X|Y)|Y]$$
+$$\log p_{\theta}(Y) - \log p_{\theta^{(k)}}(Y) = Q(\theta, \theta^{(k)}) - Q(\theta^{(k)}, \theta^{(k)}) + E_{\theta^{(k)}}[\log p_{\theta^{(k)}}(X|Y)|Y] - E_{\theta^{(k)}}[\log p_{\theta}(X|Y)|Y]$$
 
 But
 
 $$
-E_{\theta^{(k)}}[\log p_{\theta}(X \mid Y) \mid Y] - E_{\theta^{(k)}}[\log p_{\theta^{(k)}}(X \mid Y) \mid Y] = E_{\theta^{(k)}}\left[\log \frac{p_{\theta}(X \mid Y)}{p_{\theta^{(k)}}(X \mid Y)} \mid Y \right] := KL\left(p_{\theta^{(k)}}(\cdot \mid Y) \| p_{\theta}(\cdot \mid Y)\right)
+E_{\theta^{(k)}}[\log p_{\theta^{(k)}}(X \mid Y) \mid Y] - E_{\theta^{(k)}}[\log p_{\theta}(X \mid Y) \mid Y] = E_{\theta^{(k)}}\left[\log \frac{p_{\theta^{(k)}}(X \mid Y)}{p_{\theta}(X \mid Y)} \mid Y \right] := KL\left(p_{\theta^{(k)}}(\cdot \mid Y) \| p_{\theta}(\cdot \mid Y)\right)
 $$
 
 
-is positive as a Kullback-Leibler divergence. This can be shown with Jensen's inequality, since $$-\log$$ is convex, we have:
-$$KL\left(p_{\theta^{(k)}}(\cdot \mid Y) \| p_{\theta}(\cdot \mid Y)\right) = E_{\theta^{(k)}}\left[-\log \frac{p_{\theta^{(k)}}(X|Y)}{p_{\theta}(X|Y)}\right] \geq -\log E_{\theta^{(k)}}\left[\frac{p_{\theta^{(k)}}(X|Y)}{p_{\theta}(X|Y)}\right] = 0$$
+The latter quantity is known as the *Kullback-Leibler divergence*, and is positive by definition. Indeed, since $$-\log$$ is convex, we have:
+$$KL\left(p_{\theta^{(k)}}(\cdot \mid Y) \| p_{\theta}(\cdot \mid Y)\right) = E_{\theta^{(k)}}\left[-\log \frac{p_{\theta^{(k)}}(X|Y)}{p_{\theta}(X|Y)}\right] \geq -\log E_{\theta^{(k)}}\left[\frac{p_{\theta}(X|Y)}{p_{\theta^{(k)}}(X|Y)}\right] = 0$$
 
 In addition, since $$\theta^{(k+1)} \in \operatorname{Argmax}_{\theta \in \mathbb{R}^m} Q(\theta; \theta^{(k)})$$
 
