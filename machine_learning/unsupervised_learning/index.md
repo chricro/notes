@@ -109,9 +109,9 @@ $$
 
 
 is positive as a Kullback-Leibler divergence. This can be shown with Jensen's inequality, since $$-\log$$ is convex, we have:
-$$E_{\theta^{(k)}}\left[-\log \frac{p_{\theta^{(k)}}(X|Y)}{p_{\theta}(X|Y)}\right] \geq -\log E_{\theta^{(k)}}\left[\frac{p_{\theta^{(k)}}(X|Y)}{p_{\theta}(X|Y)}\right] = 0$$
+$$KL\left(p_{\theta^{(k)}}(\cdot \mid Y) \| p_{\theta}(\cdot \mid Y)\right) = E_{\theta^{(k)}}\left[-\log \frac{p_{\theta^{(k)}}(X|Y)}{p_{\theta}(X|Y)}\right] \geq -\log E_{\theta^{(k)}}\left[\frac{p_{\theta^{(k)}}(X|Y)}{p_{\theta}(X|Y)}\right] = 0$$
 
-In addition, by definition:
+In addition, since $$\theta^{(k+1)} \in \operatorname{Argmax}_{\theta \in \mathbb{R}^m} Q(\theta; \theta^{(k)})$$
 
 $$Q(\theta^{(k+1)}, \theta^{(k)}) - Q(\theta^{(k)}, \theta^{(k)}) \geq 0$$,
 
