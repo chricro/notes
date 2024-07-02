@@ -79,7 +79,7 @@ PCA only allows dimensionality reduction based on principal components which are
 
 * The *K-medoids* is almost the same as *K-means*, the only difference relies in the definition of the centroids. The representant of the clusters are not defined as the barycenter but as the point of the cluster that minimises the average distance with its class neighbours. Therefore, it corresponds to a datapoint which wouldn't be always the case with K-Means.
 
-## Expectation-maximization algorithm
+## Expectation-maximization (EM) algorithm
 
 We consider statistical models where $$Y$$ are *observed data* and $$X$$ are *latent* (or *missing*) *data*. We assume that there exists $$\theta \in \mathbb{R}^m$$ and a probability density $$(x,y) \mapsto p_{\theta}(x,y)$$.
 
@@ -87,12 +87,11 @@ As we don’t measure $$X$$, we cannot maximize $$\theta \mapsto \log p_{\theta}
 
 The main difficulty is we cannot compute $$p_{\theta}(y) = \int p_{\theta}(x,y)dx$$. The EM algorithm instead computes an auxiliary quantity, generating a sequence of estimators $$(\theta^{(p)})_{p \geq 0}$$ with:
 
-1. $$\(\theta^{(0)}\)$$: randomly initialized.
-2. $$\(\forall k \geq 0\)$$: Compute
+1. $$\theta^{(0)}$$: randomly initialized.
+2. $$\forall k \geq 0$$: Compute
    $$Q(\theta; \theta^{(k)}) = E_{Q^{(k)}}[\log p_{\theta}(X,Y) \mid Y] = \int \log p_{\theta}(x,Y) p_{\theta^{(k)}}(x \mid Y) \, dx$$
-   (E-step).
-3. Define $$\(\theta^{(k+1)} \in \operatorname{Argmax}_{\theta \in \mathbb{R}^m} Q(\theta; \theta^{(k)})\)$$ (M-step).
-
+   *(E-step)*.
+3. Define $$\theta^{(k+1)} \in \operatorname{Argmax}_{\theta \in \mathbb{R}^m} Q(\theta; \theta^{(k)})$$ *(M-step)*.
 
 The EM algorithm always increases the likelihood, that is $$\log p_{\theta^{(k+1)}}(Y) \geq \log p_{\theta^{(k)}}(Y)$$. Indeed, we have:
 
@@ -110,4 +109,4 @@ is positive as a Kullback-Leibler divergence. In addition, by definition:
 
 $$Q(\theta^{(k+1)}, \theta^{(k)}) - Q(\theta^{(k)}, \theta^{(k)}) \geq 0$$,
 
-which concludes the proof.
+which concludes the proof. EM algorithm does not guarantee that we will find the globally best solution.
