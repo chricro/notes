@@ -22,12 +22,14 @@ The following [website](https://artificialanalysis.ai/models) provides a nice co
 In this section, you will find some popular LLM leaderboards:
 * [LMSYS Chatbot Arena](https://huggingface.co/spaces/lmsys/chatbot-arena-leaderboard)
 * [OpenLLM](https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard)
+* [Multimodal LLMs](https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models/tree/Evaluation#evaluation-leaderboards)
 
 ## List of papers to filter:
 
 * This [github](https://github.com/tiingweii-shii/Awesome-Resource-Efficient-LLM-Papers?tab=readme-ov-file) repository classifies a lot of LLM papers covering different aspects of transformers.
 * Similarly, this [github](https://github.com/Hannibal046/Awesome-LLM?tab=readme-ov-file) repository collects popular LLM papers written by the GAFAM; but also a great deal of resources on LLM deployment.
 * This Prompt engineering [section](https://www.promptingguide.ai/research) highlights miscellaneous and interesting research findings about how to better work with LLMs. It include new tips, insights and developments around important LLM research areas such as scaling, agents, efficiency, hallucination, architectures, prompt injection.
+* [GenAI LLM timeline](https://github.com/hollobit/GenAI_LLM_timeline)
 
 ## Courses:
 
@@ -59,12 +61,7 @@ For instance, Llama-3-70B in bfloat16 -> Memory required ~ 1.2 * 70B * 16/8 = 16
 * Heterogenous Parallel Programming on [youtube](https://www.youtube.com/playlist?list=PLzn6LN6WhlN06hIOA_ge6SrgdeSiuf9Tb)
 * lecture on applied gpu programming on [youtube](https://www.youtube.com/playlist?list=PLPJwWVtf19Wgx_bupSDDSStSv-tOGGWRO)
 
-
-
-* https://github.com/hollobit/GenAI_LLM_timeline
-* https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models/tree/Evaluation#evaluation-leaderboards
-
 Bunch of papers to read:
-* Karpathy list of papers: https://twitter.com/karpathy/status/1734659057938477174
+* Karpathy [list](https://twitter.com/karpathy/status/1734659057938477174) of papers
 * [HuggingFace - Mixture of Experts](https://huggingface.co/blog/moe)
 * [BloombergGPT](https://arxiv.org/pdf/2303.17564.pdf) (pretrained model according to Chinchilla law)
