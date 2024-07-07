@@ -81,7 +81,13 @@ PCA only allows dimensionality reduction based on principal components which are
 
 ## Expectation-maximization (EM) algorithm
 
-We consider statistical models where $$Y$$ are *observed data* and $$X$$ are *latent* (or *missing*) *data*. We assume that there exists $$\theta \in \mathbb{R}^m$$ and a probability density $$(x,y) \mapsto p_{\theta}(x,y)$$.
+We consider statistical models where we do not have a complete data set of observations from $$Z$$.
+
+$$Y$$ are *observed data* and $$X$$ are . We will assume that the data $$Z$$ consists of *observed data* $$Y = (Y_1, ..., Y_k)$$ and *latent* (or *missing*) *data* $$X = (X_1, ..., X_k)$$. We assume that there exists $$\theta \in \mathbb{R}^m$$ and a probability density $$(x,y) \mapsto p_{\theta}(x,y)$$.
+
+With this notation, the log-likelihood function for the observed data $$Y$$ is
+
+$$p_{\theta}(Y) = \log \int p_{\theta}(x,Y)dx$$
 
 As we don’t measure $$X$$, we cannot maximize $$\theta \mapsto \log p_{\theta}(X,Y)$$. We only have access to $$Y$$ and thus $$\theta \mapsto \log p_{\theta}(Y)$$.
 
@@ -93,7 +99,7 @@ The main difficulty is we cannot compute $$p_{\theta}(y) = \int p_{\theta}(x,y)d
    *(E-step)*.
 3. Define $$\theta^{(k+1)} \in \operatorname{Argmax}_{\theta \in \mathbb{R}^m} Q(\theta; \theta^{(k)})$$ *(M-step)*.
 
-The EM algorithm always increases the likelihood, that is $$\log p_{\theta^{(k+1)}}(Y) \geq \log p_{\theta^{(k)}}(Y)$$. Indeed, we have:
+The procedure is iterated until the algorithm converges. The EM algorithm always increases the likelihood, that is $$\log p_{\theta^{(k+1)}}(Y) \geq \log p_{\theta^{(k)}}(Y)$$. Indeed, we have through Bayes' rule the following result:
 
 $$\log p_{\theta}(Y) = Q(\theta, \theta^{(k)}) - E_{\theta^{(k)}}[\log p_{\theta}(X|Y)|Y]$$
 
@@ -109,10 +115,10 @@ $$
 
 
 The latter quantity is known as the *Kullback-Leibler divergence*, and is positive by definition. Indeed, since $$-\log$$ is convex, we have:
-$$KL\left(p_{\theta^{(k)}}(\cdot \mid Y) \| p_{\theta}(\cdot \mid Y)\right) = E_{\theta^{(k)}}\left[-\log \frac{p_{\theta}(X|Y)}{p_{\theta^{(k)}}(X|Y)}\right] \geq -\log E_{\theta^{(k)}}\left[\frac{p_{\theta}(X|Y)}{p_{\theta^{(k)}}(X|Y)}\right] = 0$$
+$$KL\left(p_{\theta^{(k)}}(\cdot \mid Y) \| p_{\theta}(\cdot \mid Y)\right) = E_{\theta^{(k)}}\left[-\log \frac{p_{\theta}(X|Y)}{p_{\theta^{(k)}}(X|Y)}\right \mid Y] \geq -\log E_{\theta^{(k)}}\left[\frac{p_{\theta}(X|Y)}{p_{\theta^{(k)}}(X|Y)}\right \mid Y] = 0$$
 
 In addition, since $$\theta^{(k+1)} \in \operatorname{Argmax}_{\theta \in \mathbb{R}^m} Q(\theta; \theta^{(k)})$$
 
 $$Q(\theta^{(k+1)}, \theta^{(k)}) - Q(\theta^{(k)}, \theta^{(k)}) \geq 0$$,
 
-which concludes the proof. EM algorithm does not guarantee that we will find the globally best solution.
+which concludes the proof. The EM algorithm may converge to a *local* but not necessarily *global* maximum.
