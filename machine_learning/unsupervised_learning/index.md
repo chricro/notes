@@ -87,16 +87,15 @@ We will assume that the data $$Z$$ consists of *observed data* $$Y = (Y_1, ..., 
 
 With this notation, the log-likelihood function for the observed data $$Y$$ is
 
-$$p_{\theta}(Y) = \log \int p_{\theta}(x,Y)dx$$
+$$\log p_{\theta}(Y) = \log \int p_{\theta}(x,Y)dx$$
 
 As we don’t measure $$X$$, we cannot maximize $$\theta \mapsto \log p_{\theta}(X,Y)$$. We only have access to $$Y$$ and thus $$\theta \mapsto \log p_{\theta}(Y)$$.
 
-The main difficulty is we cannot compute $$p_{\theta}(y) = \int p_{\theta}(x,y)dx$$. The EM algorithm instead computes an auxiliary quantity, generating a sequence of estimators $$(\theta^{(p)})_{p \geq 0}$$ as follows:
+The main difficulty is we cannot compute $$p_{\theta}(y) = \int p_{\theta}(x,y)dx$$ so we can't maximize it directly. The EM algorithm instead computes an auxiliary quantity, generating a sequence of estimators $$(\theta^{(p)})_{p \geq 0}$$ which optimize {% include sidenote.html id="note-em" note="The EM algorithm may converge to a *local* but not necessarily *global* maximum." %} the log-likelihood as follows:
 
 1. $$\theta^{(0)}$$: randomly initialized.
 2. $$\forall k \geq 0$$: Compute
-   $$Q(\theta; \theta^{(k)}) = E_{\theta^{(k)}}[\log p_{\theta}(X,Y) \mid Y] = \int \log p_{\theta}(x,Y) p_{\theta^{(k)}}(x \mid Y) \, dx$$
-   *(E-step)*.
+   $$Q(\theta; \theta^{(k)}) = E_{\theta^{(k)}}[\log p_{\theta}(X,Y) \mid Y] = \int \log p_{\theta}(x,Y) p_{\theta^{(k)}}(x \mid Y) \, dx$$ *(E-step)*.
 3. Define $$\theta^{(k+1)} \in \operatorname{Argmax}_{\theta \in \mathbb{R}^m} Q(\theta; \theta^{(k)})$$ *(M-step)*.
 
 The procedure is iterated until the algorithm converges. The EM algorithm always increases the likelihood, that is $$\log p_{\theta^{(k+1)}}(Y) \geq \log p_{\theta^{(k)}}(Y)$$. Indeed, we have through Bayes' rule the following result:
@@ -115,10 +114,7 @@ $$
 
 
 The latter quantity is known as the *Kullback-Leibler divergence*, and is positive by definition. Indeed, since $$-\log$$ is convex, we have:
-$$KL\left(p_{\theta^{(k)}}(\cdot \mid Y) \| p_{\theta}(\cdot \mid Y)\right) = E_{\theta^{(k)}}\left[-\log \frac{p_{\theta}(X|Y)}{p_{\theta^{(k)}}(X|Y)}\right \mid Y] \geq -\log E_{\theta^{(k)}}\left[\frac{p_{\theta}(X|Y)}{p_{\theta^{(k)}}(X|Y)}\right \mid Y] = 0$$
+$$KL\left(p_{\theta^{(k)}}(\cdot \mid Y) \| p_{\theta}(\cdot \mid Y)\right) = E_{\theta^{(k)}}\left[-\log \frac{p_{\theta}(X|Y)}{p_{\theta^{(k)}}(X|Y)} \mid Y \right] \geq -\log E_{\theta^{(k)}}\left[\frac{p_{\theta}(X|Y)}{p_{\theta^{(k)}}(X|Y)} \mid Y \right] = 0$$
 
-In addition, since $$\theta^{(k+1)} \in \operatorname{Argmax}_{\theta \in \mathbb{R}^m} Q(\theta; \theta^{(k)})$$
-
-$$Q(\theta^{(k+1)}, \theta^{(k)}) - Q(\theta^{(k)}, \theta^{(k)}) \geq 0$$,
-
-which concludes the proof. The EM algorithm may converge to a *local* but not necessarily *global* maximum.
+In addition, since $$\theta^{(k+1)} \in \operatorname{Argmax}_{\theta \in \mathbb{R}^m} Q(\theta; \theta^{(k)})$$, we have: $$Q(\theta^{(k+1)}, \theta^{(k)}) - Q(\theta^{(k)}, \theta^{(k)}) \geq 0$$,
+which concludes the proof.
