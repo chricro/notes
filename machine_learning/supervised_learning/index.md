@@ -5,20 +5,18 @@ title: Supervised Learning
 
 Sure, here's an improved Markdown template for better visual structure and readability for your website:
 
-# Classification
-
 ## Approaches to Classification
 
-### Generative Approach
+**Generative Approach**
 
-The generative approach models the class-conditional densities $$p(x|y = k)$$ as well as the class priors $$p(y = k)$$, using these to compute posterior probabilities $$p(y = k|x)$$ via Bayes’ theorem. This method allows for generating typical data from the model by drawing samples from $$p(x|y = k)$$.
+The generative approach models the class-conditional densities $$p(x \mid y = k)$$ as well as the class priors $$p(y = k)$$, and uses these to compute posterior probabilities $$p(y = k \mid x)$$ with *Bayes’ theorem*. We can use this approach to generate typical data from the model by drawing samples from $$p(x \mid y = k)$$.
 
 **Examples of generative classifiers include:**
 - Linear Discriminant Analysis (LDA)
 - Quadratic Discriminant Analysis (QDA)
 - Naive Bayes
 
-#### Linear Discriminant Analysis (LDA) and Quadratic Discriminant Analysis (QDA)
+**Linear Discriminant Analysis (LDA) and Quadratic Discriminant Analysis (QDA)**
 
 These classifiers partition $$X = \mathbb{R}^d$$ into regions with consistent class predictions through separating hyperplanes. The conditional densities are modeled as multivariate normal:
 $$X \sim N(\mu_k,\Sigma_k)$$ for each class $$k$$.
@@ -32,7 +30,7 @@ $$f^*: x \mapsto 2 \cdot \mathbb{1} \lbrace g_1(x) - g_{-1}(x) > 0 \rbrace - 1$$
 - **LDA** assumes equal covariance across classes ($$\Sigma_k = \Sigma$$).
 - **QDA** allows different covariances in each class, creating quadratic decision boundaries.
 
-#### Naive Bayes Classifier
+**Naive Bayes Classifier**
 
 This classifier selects the class that maximizes the posterior probability given the observation:
 $$\text{argmax}_k p(y = k \mid x) = \text{argmax}_k p(x \mid y = k) p(y = k)$$
@@ -42,14 +40,14 @@ $$p(x|y = k) = \prod_{i=1}^d p(x_i|y = k,\theta_{ik})$$
 
 **Examples of Naive Bayes models based on feature types:**
 - **Gaussian distribution** for real-valued features:
-  $$p(x|y=k'\theta)=\prod_{j=1}^d \Phi(x|\mu ,\sigma^2)$$
+  $$p(x|y=k;\theta)=\prod_{j=1}^d \Phi(x|\mu ,\sigma^2)$$
 - **Bernoulli distribution** for binary features:
-  $$p(x|y = k′\theta) = \prod_{j=1}^d Ber(x_j|\theta_{jk})$$
+  $$p(x|y = k;\theta) = \prod_{j=1}^d Ber(x_j|\theta_{jk})$$
 - **Multinomial distribution** for count data.
 
-### Discriminative Approach
+**Discriminative Approach**
 
-Instead of modeling class-conditional densities, the discriminative approach models the conditional probability $$p(y = k|x)$$ directly, often using a generalised linear model framework.
+Instead of modeling class-conditional densities, the discriminative approach models the conditional probability $$p(y = k \mid x)$$ directly, often using a generalised linear model framework.
 
 **Examples of discriminative classifiers include:**
 - Logistic Regression
@@ -57,7 +55,7 @@ Instead of modeling class-conditional densities, the discriminative approach mod
 - Support Vector Machines (SVMs)
 - Perceptrons
 
-#### Logistic Regression
+**Logistic Regression**
 
 Aims to predict the label $$Y\in \lbrace 0, 1 \rbrace$$ based on features $$X \in \mathbb{R}^d$$. Logistic regression explicitly models the distribution of $$Y$$ given $$X$$.
 
