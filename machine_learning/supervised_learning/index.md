@@ -142,3 +142,5 @@ $$ \mathbb{V}[\hat{\beta}_n] = (X^T X)^{-1} X^T \mathbb{V}[Y] X (X^T X)^{-1} $$
 
 Since $$ \mathbb{V}[Y] = \sigma_*^2 I_n $$, we have:
 $$ \mathbb{V}[\hat{\beta}_n] = \sigma_*^2 (X^T X)^{-1} $$
+
+
