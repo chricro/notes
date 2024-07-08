@@ -3,66 +3,65 @@ layout: post
 title: Supervised Learning
 ---
 
-# Classification:
+Sure, here's an improved Markdown template for better visual structure and readability for your website:
 
-There are two main approaches for doing classification: the *generative approach* and the *discriminative approach*.
+# Classification
 
-## The generative approach
+## Approaches to Classification
 
-The generative approach models the class-conditional densities $$p(x|y = k)$$ as well as the class priors $$p(y = k)$$, and uses these to compute posterior probabilities $$p(y = k|x)$$ with Bayes’ theorem. We can use this approach to generate typical data from the model by drawing samples from $$p(x|y = k)$$.
-Examples: LDA, QDA, Naive Bayes, etc.
+### Generative Approach
 
-### Linear Discriminant Analysis (LDA) and Quadratic Discriminant Analysis (QDA)
+The generative approach models the class-conditional densities $$p(x|y = k)$$ as well as the class priors $$p(y = k)$$, using these to compute posterior probabilities $$p(y = k|x)$$ via Bayes’ theorem. This method allows for generating typical data from the model by drawing samples from $$p(x|y = k)$$.
 
-The discriminant classifiers partitions $$X = \mathbb{R}^d$$ into regions with the same class predictions via separating hyperplanes. The conditional densities are modeled as multivariate normal. For all class $$k$$, conditionnally on $$\lbrace Y = k \rbrace$$,
-$$X \sim N(\mu_k,\Sigma_k)$$.
+**Examples of generative classifiers include:**
+- Linear Discriminant Analysis (LDA)
+- Quadratic Discriminant Analysis (QDA)
+- Naive Bayes
 
-The discriminant functions are given by
+#### Linear Discriminant Analysis (LDA) and Quadratic Discriminant Analysis (QDA)
 
-$$g_k(X) = \log(P(X|Y=k) + \log(P(Y=k))$$
+These classifiers partition $$X = \mathbb{R}^d$$ into regions with consistent class predictions through separating hyperplanes. The conditional densities are modeled as multivariate normal:
+$$X \sim N(\mu_k,\Sigma_k)$$ for each class $$k$$.
 
-In a two-classes problem, the optimal classifier is
+Discriminant functions are defined as:
+$$g_k(X) = \log(P(X|Y=k)) + \log(P(Y=k))$$
 
+For two-class problems, the optimal classifier is:
 $$f^*: x \mapsto 2 \cdot \mathbb{1} \lbrace g_1(x) - g_{-1}(x) > 0 \rbrace - 1$$.
 
-- LDA assumes $$\Sigma_k = \Sigma$$ for all $$k$$
-- QDA assumes differents $$\Sigma_k$$ in each class (the decision boundaries are hence quadratic).
+- **LDA** assumes equal covariance across classes ($$\Sigma_k = \Sigma$$).
+- **QDA** allows different covariances in each class, creating quadratic decision boundaries.
 
-### The Naive Bayes classifier
+#### Naive Bayes Classifier
 
-* The Bayes classifier chooses the class with the greatest probability given the observation, i.e.
-
+This classifier selects the class that maximizes the posterior probability given the observation:
 $$\text{argmax}_k p(y = k \mid x) = \text{argmax}_k p(x \mid y = k) p(y = k)$$
 
-In general, we know neither the conditional densities $$p(x \mid y = k)$$ nor the class probabilities $$p(y = k)$$. The plug-in classifier uses estimates of these probabilities.
-
-* The Naive Bayes classifier is another plug-in classifier with a simple generative model: it "naïvely" assumes all measured variables/features are conditionally independent given the class label:
-
+Naive Bayes simplifies the computation by assuming conditional independence among features:
 $$p(x|y = k) = \prod_{i=1}^d p(x_i|y = k,\theta_{ik})$$
 
-One advantage of this classifier is that it allows to easily mix and match different types of features and handle missing data. It is often used with categorical data, e.g. text document classification. The form of the class-conditional density depends of the type of each features.
+**Examples of Naive Bayes models based on feature types:**
+- **Gaussian distribution** for real-valued features:
+  $$p(x|y=k'\theta)=\prod_{j=1}^d \Phi(x|\mu ,\sigma^2)$$
+- **Bernoulli distribution** for binary features:
+  $$p(x|y = k′\theta) = \prod_{j=1}^d Ber(x_j|\theta_{jk})$$
+- **Multinomial distribution** for count data.
 
-Examples:
+### Discriminative Approach
 
-* For real-valued features, the Gaussian distribution can be used
+Instead of modeling class-conditional densities, the discriminative approach models the conditional probability $$p(y = k|x)$$ directly, often using a generalised linear model framework.
 
-$$p(x|y=k'\theta)=\prod_{j=1}^d \Phi(x|\mu ,\sigma^2)$$
+**Examples of discriminative classifiers include:**
+- Logistic Regression
+- K-nearest Neighbors (KNN)
+- Support Vector Machines (SVMs)
+- Perceptrons
 
-* For binary features, $$x_j \in  \lbrace 0, 1 \rbrace$$, the Bernoulli distribution can be used:
-  
-$$p(x|y = k′\theta) = \prod_{j=1}^d Ber(x_j|\theta_{jk})$$
+#### Logistic Regression
 
-This is called the *Bernoulli Naive Bayes model*.
-* For count data, $$x_j \in \lbrace 0, 1, 2, ... \rbrace$$, the multinomial distribution can be used. This is called the *Multinomial Naive Bayes model*.
+Aims to predict the label $$Y\in \lbrace 0, 1 \rbrace$$ based on features $$X \in \mathbb{R}^d$$. Logistic regression explicitly models the distribution of $$Y$$ given $$X$$.
 
-## The discriminant approach
-
-An alternative approach is to not model the class-conditional density $$p(x|y = k)$$ at all, and assume a functional form of a generalised linear model for the discriminant function directly. The discriminative approach aims to model the conditional probability $$p(y = k|x)$$ directly, for example using a linear model like the one we used for regression. We can consider this by forming a likelihood based on the discriminant function.
-Examples: logistic regression, K-nearest neighbors, SVMs, perceptrons, etc. 
-
-### Logic regression
-
-The objective is to predict the label $$Y\in \lbrace 0, 1 \rbrace$$ based on $$X \in \mathbb{R}^d$$. Logistic regression models the distribution of $$Y$$ given $$X$$.
+This template improves readability by segmenting information into clearly defined sections and using consistent formatting for mathematical expressions and classification types. It should enhance both aesthetic appeal and navigational ease on your website.
 
 $$P(Y=1|X) = \sigma(\langle w,X \rangle +b)$$
 
@@ -98,8 +97,6 @@ One neuron is a multi-class extension of the logistic regression model.
 
 # Regression:
 
-Certainly! Here's the text with only the mathematical expressions enclosed within `$$` tags for GitHub Markdown:
-
 **Multidimensional Framework**
 
 We now assume that the model is given by:
@@ -126,3 +123,22 @@ $$ \hat{\beta}_n = (X^T X)^{-1} X^T Y $$
 
 Moreover, if $$ \mathbb{V}[\mathcal{E}_i] = \sigma_*^2 $$, then:
 $$ \mathbb{V}[\hat{\beta}_n] = \frac{\sigma_*^2}{n} (X^T X)^{-1} $$
+
+**Proof:**
+
+For all $$ \beta \in \mathbb{R}^d $$, we have:
+$$ \|Y - X\beta\|_2^2 = \|Y\|_2^2 + \beta^T X^T X \beta - 2 \beta^T X^T Y $$
+
+Hence,
+$$ \nabla_{\beta} \|Y - X\beta\|_2^2 = 2 X^T X \beta - 2 X^T Y $$
+
+The gradient of the squared norm is zero when:
+$$ \nabla_{\beta} \|Y - X\beta\|_2 = 0 \Leftrightarrow \hat{\beta} = (X^T X)^{-1} X^T Y $$
+
+**Moreover,**
+
+The variance of $$ \hat{\beta}_n $$ is given by:
+$$ \mathbb{V}[\hat{\beta}_n] = (X^T X)^{-1} X^T \mathbb{V}[Y] X (X^T X)^{-1} $$
+
+Since $$ \mathbb{V}[Y] = \sigma_*^2 I_n $$, we have:
+$$ \mathbb{V}[\hat{\beta}_n] = \sigma_*^2 (X^T X)^{-1} $$
