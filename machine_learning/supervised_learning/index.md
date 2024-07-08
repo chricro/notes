@@ -96,7 +96,33 @@ $$\text{softmax}(z)_m = \frac{\exp(z_m)}{\sum_{j=1}^M \exp(z_j)}$$
 
 One neuron is a multi-class extension of the logistic regression model.
 
-
 # Regression:
 
+Certainly! Here's the text with only the mathematical expressions enclosed within `$$` tags for GitHub Markdown:
 
+**Multidimensional Framework**
+
+We now assume that the model is given by:
+$$ Y_i = X_i^T \beta_* + \mathcal{E}_i $$
+where $$ X_i \in \mathbb{R}^d $$, $$ \beta_* \in \mathbb{R}^d $$, and where $$ (\mathcal{E}_i)_{1 \leq i \leq n} $$ are independent, identically distributed, and centered.
+
+We can write the model:
+$$ Y = X \beta_* + \mathcal{E} $$
+
+where:
+$$
+\mathcal{E} = \begin{pmatrix} \mathcal{E}_1 \\ \vdots \\ \mathcal{E}_n \end{pmatrix}, \quad
+Y = \begin{pmatrix} Y_1 \\ \vdots \\ Y_n \end{pmatrix}, \quad
+X = \begin{pmatrix} X_1^T \\ \vdots \\ X_n^T \end{pmatrix} \in \mathbb{R}^{n \times d}
+$$
+
+The least squares estimator is then:
+$$ \hat{\beta}_n \in \operatorname{Argmin}_{\beta \in \mathbb{R}^d} \|Y - X \beta\|_2^2 $$
+
+**Proposition:**
+
+If $$ X^T X $$ is invertible, then:
+$$ \hat{\beta}_n = (X^T X)^{-1} X^T Y $$
+
+Moreover, if $$ \mathbb{V}[\mathcal{E}_i] = \sigma_*^2 $$, then:
+$$ \mathbb{V}[\hat{\beta}_n] = \frac{\sigma_*^2}{n} (X^T X)^{-1} $$
