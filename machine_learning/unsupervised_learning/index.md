@@ -83,7 +83,7 @@ PCA only allows dimensionality reduction based on principal components which are
 
 We consider statistical models where we do not have a complete data set of observations from $$Z$$.
 
-$$Y$$ are *observed data* and $$X$$ are . We will assume that the data $$Z$$ consists of *observed data* $$Y = (Y_1, ..., Y_k)$$ and *latent* (or *missing*) *data* $$X = (X_1, ..., X_k)$$. We assume that there exists $$\theta \in \mathbb{R}^m$$ and a probability density $$(x,y) \mapsto p_{\theta}(x,y)$$.
+We will assume that the data $$Z$$ consists of *observed data* $$Y = (Y_1, ..., Y_k)$$ and *latent* (or *missing*) *data* $$X = (X_1, ..., X_k)$$. We assume that there exists $$\theta \in \mathbb{R}^m$$ and a probability density $$(x,y) \mapsto p_{\theta}(x,y)$$.
 
 With this notation, the log-likelihood function for the observed data $$Y$$ is
 
