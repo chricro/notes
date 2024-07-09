@@ -179,4 +179,4 @@ $$
 
 ### Conclusion
 
-The derived formulas for $$\mu_k$$ and $$\Sigma_k$$ are used in the M-step to update the parameters of the Gaussian components based on the current estimates of the responsibilities $$\gamma(z_{nk})$$ computed in the E-step. This process iterates until convergence, ensuring each step either improves or retains the likelihood of the observed data under the model.
+The derived formulas for $$\mu_k$$ and $$\Sigma_k$$ are used in the M-step to update the parameters of the Gaussian components based on the current estimates of the responsibilities $$\gamma(z_{nk})$$ computed in the E-step. This process iterates until convergence, ensuring each step either improves or retains the likelihood of the observed data under the model. You can check my streamlit [application](https://emalgorithm-m9upjzdzpacfujan7cvnqr.streamlit.app/) for a visual illustration of the EM algorithm.
