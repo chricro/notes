@@ -13,11 +13,6 @@ Here is a synthesis of various elements I learned from Machine Learning courses 
 - [Supervised learning](machine_learning/supervised_learning/): Generative approache (LDA/GDA, Naive Bayes) vs discriminant approach (logistic regression).
 - [Unsupervised learning](machine_learning/unsupervised_learning/): Dimension reduction (PCA, Kernel PCA). Unsupervised clustering (K-means, K-medoids). Latent data (EM algorithm).
 
-## Statistics
-
-- [Sampling methods](statistics/sampling/):
-- [Bayesian statistics](statistics/bayesian/):
-
 ## Generative AI
 
 Here are some notes on Generative AI that I wrote while working full-time at a startup.
@@ -29,4 +24,4 @@ Here are some notes on Generative AI that I wrote while working full-time at a s
 
 As someone eager to apply my statistical and machine learning knowledge to practical problems and real-world scenarios, I find finance to be a fascinating field for research and exploration.
 
-1. [Book Excerpts](finance/books/): Sentences from books that I find interesting and educational.
+1. [Book Excerpts](finance/books/): Here are extracts from books that I find interesting and educational, as well as areas I am willing to explore.
