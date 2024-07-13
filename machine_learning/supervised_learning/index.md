@@ -3,8 +3,6 @@ layout: post
 title: Supervised Learning
 ---
 
-Sure, here's an improved Markdown template for better visual structure and readability for your website:
-
 ## Approaches to Classification
 
 **Generative Approach**
