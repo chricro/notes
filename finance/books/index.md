@@ -22,18 +22,17 @@ title: Book thoughts
 * p.34: If puts have higher volumes relative to calls than they normally do, it might be an indicator that investors are worried about a downturn. (...) A second example of options-based sentiment in equities utilizes the implied volatilities of puts versus calls.
 * p.35: Rather, combining betas with historical data about tht ebook-to-price ratio and the market capitalization of the stocks was a better determinant of future returns.
 * p.37: When done on a relative basis, that is, buying the undervalued security and selling the overvalued one against it, this strategy is also known as a *carry trade*. The spread between the yield received and the yield paid is the *carry*. If nothing else happens, a carry trade offers an investor a baseline rate of return, which acts as the margin of safety Graham and Dodd were talking about.
+* p.38: Quant long/short (QLS) traders tend to rank stocks according to their attractiveness based on various factors, such as value, and then buy the higher-ranked stocks while seling short the lower-ranked ones.
+* p.39: Roll yield is the spread between the price of a futures contract with some expiry date in the future, versus that of the spot. Because there is a convergence of futures contracts up to the spot price, futures in this situation are considered to have positive roll yield.
+* p.39: It is better to buy assets that are experiencing rapid economic growth and/or to sell assets that are experiencing slow or negative growth. (growth sentiment)
+* p.41: there are measures found, for example, in companie's financial statements, including changes in discretionary accruals (the idea being, the greater the increase in discretionary accruals, the more likely there are problems with the management's stewardship of the company).
+* p.44: the data-mining strategy requires nearly constant adjustment to keep up with the changes going on in markets, an activity that has many risks in itself.
 
 
 ## From my readings, here are some areas/notions I need to explore:
 
 * index fund
 * P/E ratio: the price-to-earnings ratio is the proportion of a company's share price to its earnings per share.
-* book-to-price ratio: calculated by dividing the market price per share by the book value per share.
+* book-to-price ratio: calculated by dividing the market price per share by the book value per share. Interpretation: P/B < 1: the stock is potentially undervalued / the company is performing poorly / the market doesn't believe the company's assets are worth the value on its balance sheet. A stock with a higher book-to-price ratio might outperform stocks with lower book-to-price ratios over the coming quarters.
 
 Company Financial Transactions: Only transactions that the company itself engages in, such as issuing new shares, repurchasing shares, or acquiring assets, affect the book value.
-
-Interpretation
-- P/B < 1: Indicates that the stock is potentially undervalued or that the company is performing poorly. It might also suggest that the market does not believe the company’s assets are worth the value on its balance sheet.
-- P/B > 1: Indicates that the stock is potentially overvalued or that the company is performing well. It might also suggest that investors are willing to pay more than the book value due to expectations of future growth, strong earnings, or other favorable factors.
-- P/B = 1: Indicates that the market value is equal to the book value.
-
